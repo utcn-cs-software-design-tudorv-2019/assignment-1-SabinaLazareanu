@@ -1,0 +1,35 @@
+package assigment1.tucn.cs.BLL;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import assigment1.tucn.cs.BLL.utils.SqlQueries;
+import assigment1.tucn.cs.DAL.Student;
+import assigment1.tucn.cs.DAL.Teacher;
+import assigment1.tucn.cs.database.config.JDBConnectionConfig;
+
+public class TeacherRepository extends Repository {
+
+	public TeacherRepository(JDBConnectionConfig dbConnectionWrapper) {
+		super(dbConnectionWrapper);
+	}
+
+	public Teacher insertStudent(Teacher teacher) throws ExecutionException {
+		Connection connection = getConnectionWrapper().getConnection();
+		Teacher inseredStudent = null;
+		try (PreparedStatement statement = connection.prepareStatement(SqlQueries.INSERT_TEACHER);) {
+			statement.setLong(1, teacher.getIdUser());
+			statement.setString(2, teacher.getUserName());
+			statement.setString(3, teacher.getPassword());
+			try (ResultSet resultSet = statement.executeQuery();) {
+				if (resultSet.next()) {
+					teacher = getTeacherFromResultSet(resultSet);
+				}
+			}
+		} catch (Exception e) {
+			throw new ExecutionException(e.getMessage());
+		}
+		return inseredStudent;
+	}
+}

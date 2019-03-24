@@ -1,0 +1,26 @@
+
+_squid:S1148U"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8´°ûıš-HïnRMINORZVULNERABILITY
+ˆsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¡ÇÊšHÙlRMINORZ
+CODE_SMELL
+squid:S1450"ZRemove the "currentUser" field and declare it as a local variable in the relevant methods.(ûË¥ó8µ‰Æÿš-HåqRMINORZ
+CODE_SMELL
+usquid:S1858F"A"getText" returns a string, there's no need to call "toString()".(½ï û8´°ûıš-HònRMINORZ
+CODE_SMELL
+usquid:S1858G"A"getText" returns a string, there's no need to call "toString()".(áÓÒğ8´°ûıš-HónRMINORZ
+CODE_SMELL
+Œsquid:S1450"XRemove the "checkUser" field and declare it as a local variable in the relevant methods.(€Ñ¸›8´°ûıš-HğnRMINORZ
+CODE_SMELL
+l
+squid:S106I"9Replace this use of System.out or System.err by a logger.(®ˆÓ8´°ûıš-HônRMAJORZ
+CODE_SMELL
+csquid:S00108K")Either remove or fill this block of code.(«Í£ƒşÿÿÿÿ8´°ûıš-HõnRMAJORZ
+CODE_SMELL
+l
+squid:S106A"9Replace this use of System.out or System.err by a logger.(“Ïÿƒ8áüçüš-HÛlRMAJORZ
+CODE_SMELL
+jsquid:S1135M"2Complete the task associated to this TODO comment.(ÊµÊÊıÿÿÿÿ8÷­¸şš-HpRINFOZ
+CODE_SMELL
+jsquid:S1135T"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8´°ûıš-HönRINFOZ
+CODE_SMELL
+•squid:S1450"\Remove the "checkPassword" field and declare it as a local variable in the relevant methods.(•ìıÜıÿÿÿÿ8´°ûıš-HñnRMINORZ
+CODE_SMELL

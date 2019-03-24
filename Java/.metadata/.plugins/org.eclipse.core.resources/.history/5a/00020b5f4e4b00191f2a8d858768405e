@@ -1,0 +1,23 @@
+package assigment1.tucn.cs.DAL;
+
+import java.util.List;
+
+import assigment1.tucn.cs.BLL.StudentRepository;
+import assigment1.tucn.cs.BLL.StudentRepositoryMySqlImpl;
+import assigment1.tucn.cs.database.config.JDBConnectionFactory;
+import assigment1.tucn.cs.database.config.JDBConnectionException;
+
+public class App {
+	public static void main(String[] args) {
+		// System.out.println("Hello World!");
+		JDBConnectionFactory factory = new JDBConnectionFactory();
+		try {
+			StudentRepository repo = new StudentRepositoryMySqlImpl(factory.getConnectionWrapper("university_db"));
+			List<?> students = repo.findAll();
+			System.out.println(students.get(0).getFirst_name());
+		} catch (JDBConnectionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

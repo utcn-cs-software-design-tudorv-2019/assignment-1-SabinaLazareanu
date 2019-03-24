@@ -1,0 +1,39 @@
+package assigment1.tucn.cs.DAL;
+
+public class UserBuilder {
+
+	private User user;
+
+	public UserBuilder() {
+		this.user = new User();
+	}
+
+	public UserBuilder setId(Long id) {
+		user._setIdUser(id);
+		return this;
+	}
+
+	public UserBuilder setName(String name) {
+		user.setName(name);
+		return this;
+	}
+
+	public UserBuilder setAddress(String address) {
+		user.setAddress(address);
+		return this;
+	}
+
+	public UserBuilder setPNC(String pnc) {
+		user.setPNC(pnc);
+		return this;
+	}
+
+	public UserBuilder setINC(String inc) {
+		user.setICN(inc);
+		return this;
+	}
+
+	public User build() {
+		return user;
+	}
+}

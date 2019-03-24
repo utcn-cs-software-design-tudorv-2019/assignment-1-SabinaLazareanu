@@ -1,0 +1,45 @@
+package assigment1.tucn.cs.DAL;
+
+public class TeacherBuilder {
+
+	private Teacher teacher;
+
+	public TeacherBuilder() {
+		teacher = new Teacher();
+	}
+
+	public StudentBuilder setId(Long id) {
+		teacher.setIdTeacher(id);
+		return this;
+	}
+
+	public StudentBuilder setFirstName(String firstName) {
+		teacher.setFirst_name(firstName);
+		return this;
+	}
+
+	public StudentBuilder setLastName(String lastName) {
+		teacher.setLast_name(lastName);
+		return this;
+	}
+
+	public StudentBuilder setUserName(String userName) {
+		teacher.setUser_name(userName);
+		return this;
+	}
+
+	public StudentBuilder setPassword(String password) {
+		teacher.setPassword(password);
+		return this;
+	}
+
+	public StudentBuilder setGroupId(Long groupId) {
+		teacher.setId_group(groupId);
+		return this;
+	}
+
+	public Student build() {
+		return teacher;
+	}
+
+}

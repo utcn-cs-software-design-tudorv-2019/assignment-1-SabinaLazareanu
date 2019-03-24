@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assigment1.tucn.cs.UI.Controller">
+   <children>
+      <AnchorPane layoutY="65.0" prefHeight="143.0" prefWidth="517.0">
+         <children>
+            <TitledPane animated="false" layoutY="-103.0" prefHeight="311.0" prefWidth="517.0" text="Login">
+              <content>
+                  <Pane>
+                     <children>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="279.0" prefWidth="534.0">
+                           <children>
+                              <TextField fx:id="userName" layoutX="194.0" layoutY="59.0" />
+                              <Label layoutX="85.0" layoutY="64.0" text="Username:" />
+                              <Label layoutX="87.0" layoutY="126.0" text="Password:" />
+                              <Button fx:id="loginButton" layoutX="247.0" layoutY="179.0" mnemonicParsing="false" onAction="#loginButtonClicked" text="Login" />
+                              <PasswordField fx:id="password" layoutX="194.0" layoutY="121.0" />
+                              <Label fx:id="messageField" layoutX="164.0" layoutY="20.0" text="Please login:" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </Pane>
+              </content>
+            </TitledPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

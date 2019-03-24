@@ -1,0 +1,58 @@
+package assigment1.tucn.cs.DAL;
+
+public class Student extends User {
+
+	private Long idStudent;
+	private String userName;
+	private String password;
+	private String group;
+	private Long idUser;
+
+	public Long getId_student() {
+		return id_student;
+	}
+
+	public void setId_student(Long id_student) {
+		this.id_student = id_student;
+	}
+
+	public String getFirst_name() {
+		return first_name;
+	}
+
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
+	}
+
+	public String getLast_name() {
+		return last_name;
+	}
+
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
+	}
+
+	public String getUser_name() {
+		return user_name;
+	}
+
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Long getId_group() {
+		return id_group;
+	}
+
+	public void setId_group(Long id_group) {
+		this.id_group = id_group;
+	}
+}

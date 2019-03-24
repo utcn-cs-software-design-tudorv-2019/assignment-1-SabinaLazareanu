@@ -1,0 +1,44 @@
+package assigment1.tucn.cs.DAL;
+
+public class UserBuilder {
+
+private User user;
+	
+	public StudentBuilder() {
+		user=new Student();
+	}
+	
+	public StudentBuilder setId(Long id) {
+		user.setId_student(id);
+		return this;
+	}
+	
+	public StudentBuilder setFirstName(String firstName) {
+		user.setFirst_name(firstName);
+		return this;
+	}
+	
+	public StudentBuilder setLastName(String lastName) {
+		user.setLast_name(lastName);
+		return this;
+	}
+	
+	public StudentBuilder setUserName(String userName) {
+		user.setUser_name(userName);
+		return this;
+	}
+	
+	public StudentBuilder setPassword(String password) {
+		user.setPassword(password);
+		return this;
+	}
+	
+	public StudentBuilder setGroupId(Long groupId) {
+		user.setId_group(groupId);
+		return this;
+	}
+	
+	public Student build() {
+		return user;
+	}
+}

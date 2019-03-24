@@ -1,0 +1,81 @@
+package assigment1.tucn.cs.BLL;
+
+import static assigment1.tucn.cs.BLL.utils.SqlQueries.SELECT_ALL_QUERIE;
+import static assigment1.tucn.cs.BLL.utils.SqlQueries.SELECT_ALL_STUDENTS_QUERIE;
+import static assigment1.tucn.cs.BLL.utils.SqlQueries.SELECT_BY_ID;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import assigment1.tucn.cs.BLL.utils.SqlQueries;
+import assigment1.tucn.cs.DAL.Student;
+import assigment1.tucn.cs.DAL.StudentBuilder;
+import assigment1.tucn.cs.database.config.JDBConnectionConfig;
+
+public class StudentRepositoryMySqlImpl implements StudentRepository {
+
+	private final JDBConnectionConfig connectionWrapper;
+
+	public StudentRepositoryMySqlImpl(JDBConnectionConfig dbConnectionWrapper) {
+		connectionWrapper = dbConnectionWrapper;
+	}
+
+	@Override
+	public List<Student> findAll() throws ExecutionException {
+		Connection connection = connectionWrapper.getConnection();
+		List<Student> objects = new ArrayList<>();
+
+		try {
+			PreparedStatement selectStudents = connection.prepareStatement(SELECT_ALL_QUERIE);
+			ResultSet resultSet = selectStudents.executeQuery();
+
+			while (resultSet.next()) {
+				objects.add(getStudentFromResultSet(resultSet));
+			}
+		} catch (SQLException e) {
+			throw new ExecutionException(e.getMessage());
+		}
+
+		return objects;
+	}
+
+	@Override
+	public void delete(Long id) {
+		Connection connection = connectionWrapper.getConnection();
+		PreparedStatement statement = null;
+		try {
+			statement
+		}
+		
+	}
+
+	@Override
+	public Student getById(Long id) throws ExecutionException {
+		Connection connection = connectionWrapper.getConnection();
+		Student student = null;
+
+		try {
+			PreparedStatement statement = connection.prepareStatement(SELECT_BY_ID);
+			statement.setLong(1, id);
+			ResultSet resultSet = statement.executeQuery();
+			if (resultSet.next()) {
+				student = getStudentFromResultSet(resultSet);
+			}
+		} catch (SQLException e) {
+			throw new ExecutionException(e.getMessage());
+		}
+
+		return student;
+	}
+
+	private Student getStudentFromResultSet(ResultSet rs) throws SQLException {
+		return new StudentBuilder().setId(rs.getLong("id_student")).setIdUser(rs.getLong("User_idUser"))
+				.setUserName(rs.getString("user_name")).setPassword(rs.getString("password"))
+				.setGroup(rs.getString("Group_id_group")).build();
+	}
+
+}

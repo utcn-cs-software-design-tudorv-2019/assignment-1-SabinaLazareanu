@@ -1,0 +1,5 @@
+package assigment1.tucn.cs.BLL;
+
+public class UserRepository extends Repository {
+
+}

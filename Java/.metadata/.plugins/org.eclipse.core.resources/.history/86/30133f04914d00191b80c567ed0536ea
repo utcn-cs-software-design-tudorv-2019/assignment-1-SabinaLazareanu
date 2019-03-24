@@ -1,0 +1,34 @@
+package assigment1.tucn.cs.BLL;
+
+import java.util.List;
+
+import assigment1.tucn.cs.DAL.Student;
+import assigment1.tucn.cs.DAL.StudentRepository;
+import assigment1.tucn.cs.DAL.TeacherRepository;
+import assigment1.tucn.cs.DAL.User;
+
+public class LoginService {
+
+	private static final String ADMIN_USER = "admin";
+	private static final String ADMIN_PASSWORD = "password";
+
+	private StudentRepository studentRepo;
+	private TeacherRepository teacherRepo;
+
+	public LoginService(StudentRepository studentRepo, TeacherRepository teacherRepo) {
+		this.studentRepo = studentRepo;
+		this.teacherRepo = teacherRepo;
+	}
+
+	public User login(String userName, String password) {
+		if (password.equalsIgnoreCase(ADMIN_USER)) {
+			if (userName.equalsIgnoreCase(ADMIN_PASSWORD)) {
+				//TODOs
+			}else {
+				//TODO
+			}
+		}
+		List<Student> students
+	}
+
+}

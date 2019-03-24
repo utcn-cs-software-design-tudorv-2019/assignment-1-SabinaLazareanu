@@ -1,0 +1,46 @@
+package assigment1.tucn.cs.UI;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+
+public class Controller {
+
+	@FXML
+	private TextField password;
+
+	@FXML
+	private TextField userName;
+
+	@FXML
+	private TextField AddressField;
+
+	@FXML
+	private TextField groupField;
+
+	@FXML
+	private TextField idField;
+
+	@FXML
+	private TextField PncField;
+
+	@FXML
+	private TextField nameField;
+
+	@FXML
+	private TextField IcnField;
+
+	@FXML
+	void updateStudentButtonClicked(ActionEvent event) {
+		System.out.println("Update!");
+	}
+
+	@FXML
+	void loginButtonClicked(ActionEvent event) {
+
+	}
+
+	public void updateStudentButtonClicked() {
+		
+	}
+}

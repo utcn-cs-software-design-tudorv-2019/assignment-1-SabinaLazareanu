@@ -1,0 +1,8 @@
+package assigment1.tucn.cs.DAL;
+
+public class Teacher {
+	private String idTeacher;
+	
+	
+
+}

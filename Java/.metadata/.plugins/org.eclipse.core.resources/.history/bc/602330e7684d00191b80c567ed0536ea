@@ -1,0 +1,8 @@
+package assigment1.tucn.cs.BLL;
+
+public class StudentRepository extends Repository{
+
+	public Student insertStudent() {
+		
+	}
+}

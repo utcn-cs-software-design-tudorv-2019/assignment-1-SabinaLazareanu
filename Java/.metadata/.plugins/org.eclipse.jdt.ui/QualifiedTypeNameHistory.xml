@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="assigment1.tucn.database.config.DatabaseConnectionException"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="assigment1.tucn.BLL.StudentRepositoryMySqlImpl"/>
+<fullyQualifiedTypeName name="assigment1.tucn.database.config.DBConnectionWrapper"/>
+<fullyQualifiedTypeName name="assigment1.tucn.BLL.StudentRepository"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.StudentRepositoryMySqlImpl"/>
+<fullyQualifiedTypeName name="assigment1.tucn.database.cs.config.DBConnectionFactory"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.StudentRepository"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.AbstractRepository"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.StudentBuilder"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.ExecutionException"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.utils.ETables"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.TeacherBuilder"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.Repository"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.UserBuilder"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.utils.SqlQueries"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.database.config.JDBConnectionException"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.database.config.JDBConnectionFactory"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.UI.LoginPage"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.database.config.JDBConnectionConfig"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.StudentRepository"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.TeacherRepository"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.LoginService"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.User"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.Teacher"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.Student"/>
+<fullyQualifiedTypeName name="javafx.fxml.Initializable"/>
+<fullyQualifiedTypeName name="javafx.event.ActionEvent"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Label"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.GETFIELD"/>
+<fullyQualifiedTypeName name="java.util.Objects"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.UserRepository"/>
+<fullyQualifiedTypeName name="javafx.scene.control.TextField"/>
+</qualifiedTypeNameHistroy>

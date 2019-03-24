@@ -1,0 +1,47 @@
+package assigment1.tucn.cs.BLL;
+
+import static assigment1.tucn.cs.BLL.utils.ETables.STUDENT;
+
+import java.util.List;
+
+import assigment1.tucn.cs.DAL.ExecutionException;
+import assigment1.tucn.cs.DAL.Student;
+import assigment1.tucn.cs.DAL.StudentRepository;
+import assigment1.tucn.cs.DAL.Teacher;
+import assigment1.tucn.cs.DAL.TeacherRepository;
+import assigment1.tucn.cs.DAL.User;
+
+public class LoginService {
+
+	private static final String ADMIN_USER = "admin";
+	private static final String ADMIN_PASSWORD = "password";
+
+	private StudentRepository studentRepo;
+	private TeacherRepository teacherRepo;
+
+	public LoginService(StudentRepository studentRepo, TeacherRepository teacherRepo) {
+		this.studentRepo = studentRepo;
+		this.teacherRepo = teacherRepo;
+	}
+
+	public User login(String userName, String password) throws ExecutionException {
+		User currentUser;
+		if (password.equalsIgnoreCase(ADMIN_USER)) {
+			if (userName.equalsIgnoreCase(ADMIN_PASSWORD)) {
+				currentUser=new Teacher();
+			} else {
+				// TODO
+			}
+		} else {
+			List<Student> students = (List<Student>) studentRepo.findAll(STUDENT);
+			for(Student student: students) {
+				if(student.getUserName().equals(userName)) {
+					if(student.getPassword().equals(password)) {
+						currentUser=student;
+					}
+				}
+			}
+		}
+	}
+
+}

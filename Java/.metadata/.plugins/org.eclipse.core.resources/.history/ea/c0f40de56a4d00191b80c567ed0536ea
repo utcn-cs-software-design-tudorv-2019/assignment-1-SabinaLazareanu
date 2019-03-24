@@ -1,0 +1,11 @@
+package assigment1.tucn.cs.BLL;
+
+import assigment1.tucn.cs.database.config.JDBConnectionConfig;
+
+public class TeacherRepository extends Repository {
+
+	public TeacherRepository(JDBConnectionConfig dbConnectionWrapper) {
+		super(dbConnectionWrapper);
+	}
+
+}

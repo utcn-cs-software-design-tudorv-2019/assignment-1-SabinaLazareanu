@@ -1,0 +1,40 @@
+package assigment1.tucn.cs.DAL;
+
+import static assigment1.tucn.cs.BLL.utils.ETables.STUDENT;
+
+import java.util.List;
+
+import assigment1.tucn.cs.BLL.ExecutionException;
+import assigment1.tucn.cs.BLL.Repository;
+import assigment1.tucn.cs.BLL.StudentRepository;
+import assigment1.tucn.cs.BLL.StudentRepositoryMySqlImpl;
+import assigment1.tucn.cs.database.config.JDBConnectionException;
+import assigment1.tucn.cs.database.config.JDBConnectionFactory;
+
+public class App {
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) {
+		// System.out.println("Hello World!");
+		JDBConnectionFactory factory = new JDBConnectionFactory();
+		@SuppressWarnings("unchecked")
+		List<Student> students = null;
+		@SuppressWarnings("unused")
+		Student student = null;
+		try {
+			Repository repo = new Repository(factory.getConnectionWrapper("university_db"));
+
+			try {
+				students = (List<Student>) repo.findAll(STUDENT);
+				student = (Student) repo.getById(2l, STUDENT);
+			} catch (ExecutionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println(students.get(0).getGroup());
+			System.out.println(student.getUserName());
+		} catch (JDBConnectionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

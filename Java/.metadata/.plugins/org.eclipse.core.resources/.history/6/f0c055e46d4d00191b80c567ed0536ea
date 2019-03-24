@@ -1,0 +1,11 @@
+package assigment1.tucn.cs.BLL;
+
+import assigment1.tucn.cs.database.config.JDBConnectionConfig;
+
+public class UserRepository extends Repository {
+
+	public UserRepository(JDBConnectionConfig dbConnectionWrapper) {
+		super(dbConnectionWrapper);
+	}
+
+}

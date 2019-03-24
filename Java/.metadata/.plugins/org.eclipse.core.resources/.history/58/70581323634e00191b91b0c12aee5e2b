@@ -1,0 +1,7 @@
+package assigment1.tucn.cs.UI;
+
+import assigment1.tucn.cs.DAL.User;
+
+public class Super {
+	public User currentStudent;
+}

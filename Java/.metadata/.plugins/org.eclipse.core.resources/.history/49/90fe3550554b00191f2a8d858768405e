@@ -1,0 +1,8 @@
+package assigment1.tucn.cs.BLL.utils;
+
+public class SqlQueries {
+	
+	public static final String SELECT_ALL_STUDENTS_QUERIE="Select * from Student;";
+	public static final String SELECT_STUDENT_BY_ID="Select  from Student where id_student=?;";
+
+}

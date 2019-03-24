@@ -1,0 +1,69 @@
+package assigment1.tucn.cs.BLL;
+
+import static assigment1.tucn.cs.BLL.utils.SqlQueries.SELECT_ALL_STUDENTS_QUERIE;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import assigment1.tucn.cs.BLL.utils.SqlQueries;
+import assigment1.tucn.cs.DAL.Student;
+import assigment1.tucn.cs.DAL.StudentBuilder;
+import assigment1.tucn.cs.database.config.JDBConnectionConfig;
+
+public class StudentRepositoryMySqlImpl implements StudentRepository {
+
+	private final JDBConnectionConfig connectionWrapper;
+
+	public StudentRepositoryMySqlImpl(JDBConnectionConfig dbConnectionWrapper) {
+		connectionWrapper = dbConnectionWrapper;
+	}
+
+	@Override
+	public List<Student> findAll() throws ExecutionException {
+		Connection connection = connectionWrapper.getConnection();
+		List<Student> students = new ArrayList<>();
+
+		try {
+			PreparedStatement selectStudents = connection.prepareStatement(SELECT_ALL_STUDENTS_QUERIE);
+			ResultSet resultSet = selectStudents.executeQuery();
+
+			while (resultSet.next()) {
+				students.add(getStudentFromResultSet(resultSet));
+			}
+		} catch (SQLException e) {
+			throw new ExecutionException(e.getMessage());
+		}
+
+		return students;
+	}
+
+	private Student getStudentFromResultSet(ResultSet rs) throws SQLException {
+		return new StudentBuilder().setId(rs.getLong("id_student")).setFirstName(rs.getString("first_name"))
+				.setLastName(rs.getString("last_name")).setUserName(rs.getString("user_name"))
+				.setPassword(rs.getString("password")).setGroupId(rs.getLong("Group_id_group")).build();
+	}
+
+	@Override
+	public Student getById(Long id) {
+		Connection connection = connectionWrapper.getConnection();
+		Student student = null;
+
+		try {
+			PreparedStatement selectStudent = connection.prepareStatement(SqlQueries.SELECT_STUDENT_BY_ID);
+			selectStudent.setLong(1, id);
+			ResultSet resultSet = selectStudent.executeQuery();
+			if (resultSet.next()) {
+
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+}

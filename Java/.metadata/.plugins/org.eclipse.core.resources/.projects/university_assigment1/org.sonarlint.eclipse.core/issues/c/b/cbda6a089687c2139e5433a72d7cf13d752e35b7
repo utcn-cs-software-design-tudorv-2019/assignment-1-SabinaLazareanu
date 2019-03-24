@@ -1,0 +1,66 @@
+
+„squid:CommentedOutCodeLine""<This block of commented-out lines of code should be removed.(‹„ÍÚÿÿÿÿÿ8¿”×ýš-H¯nRMAJORZ
+CODE_SMELL
+jsquid:S11359"2Complete the task associated to this TODO comment.(ÕÌ®þÿÿÿÿ8ï»‹þš-HÖoRINFOZ
+CODE_SMELL
+isquid:S1068"0Remove this unused "loginService" private field.(­”ƒÇüÿÿÿÿ8òˆÿýš-H•oRMAJORZ
+CODE_SMELL
+_squid:S1148:"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8ï»‹þš-HÕoRMINORZVULNERABILITY
+squid:CommentedOutCodeLine‹"<This block of commented-out lines of code should be removed.(ïÛÌ*8òˆÿýš-H£oRMAJORZ
+CODE_SMELL
+asquid:S1068"-Remove this unused "checkUser" private field.(€Ñ¸›8òˆÿýš-H“oRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineJ"<This block of commented-out lines of code should be removed.(£ï¸â8òˆÿýš-H™oRMAJORZ
+CODE_SMELL
+_squid:S1135€"2Complete the task associated to this TODO comment.(ÉÚõÎHçlRINFOZ
+CODE_SMELL
+msquid:S1068"4Remove this unused "currentStudentId" private field.(§ÃÊªúÿÿÿÿ8¦ìüš-HôlRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine?"<This block of commented-out lines of code should be removed.(ÃÊ‰¸8òˆÿýš-H–oRMAJORZ
+CODE_SMELL
+„squid:CommentedOutCodeLined"<This block of commented-out lines of code should be removed.(½ÆùÙúÿÿÿÿ8òˆÿýš-HoRMAJORZ
+CODE_SMELL
+…squid:CommentedOutCodeLine—"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8¿”×ýš-H±nRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLinem"<This block of commented-out lines of code should be removed.(Å‚ð½8òˆÿýš-HŸoRMAJORZ
+CODE_SMELL
+„squid:CommentedOutCodeLine-"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8òˆÿýš-H¥oRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineF"<This block of commented-out lines of code should be removed.(µìé 8òˆÿýš-H˜oRMAJORZ
+CODE_SMELL
+„squid:CommentedOutCodeLineP"<This block of commented-out lines of code should be removed.(§×ÕÖúÿÿÿÿ8òˆÿýš-HšoRMAJORZ
+CODE_SMELL
+…squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(íéÑºþÿÿÿÿ8òˆÿýš-H¤oRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine`"<This block of commented-out lines of code should be removed.(Ñßœ¸8òˆÿýš-HœoRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineB"<This block of commented-out lines of code should be removed.(à‘©„8òˆÿýš-H—oRMAJORZ
+CODE_SMELL
+€squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(†€éˆ8¿”×ýš-H°nRMAJORZ
+CODE_SMELL
+hsquid:S1068"/Remove this unused "teacherRepo" private field.(Å—ƒøÿÿÿÿ8¿”×ýš-H­nRMAJORZ
+CODE_SMELL
+jsquid:S1068"1Remove this unused "checkPassword" private field.(•ìýÜýÿÿÿÿ8òˆÿýš-H”oRMAJORZ
+CODE_SMELL
+ksquid:S1135›"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ8œÀ¦ýš-H¯mRINFOZ
+CODE_SMELL
+„squid:CommentedOutCodeLineX"<This block of commented-out lines of code should be removed.(©Û×ùÿÿÿÿ8òˆÿýš-H›oRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine*"<This block of commented-out lines of code should be removed.(†€éˆ8òˆÿýš-H¡oRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineo"<This block of commented-out lines of code should be removed.(…ÎÛ’8òˆÿýš-H oRMAJORZ
+CODE_SMELL
+ˆsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¡ÇÊšHêlRMINORZ
+CODE_SMELL
+csquid:S1068"*Remove this unused "SCHEMA" private field.(ñ»×ûÿÿÿÿ8¿”×ýš-H®nRMAJORZ
+CODE_SMELL
+jsquid:S1135)"2Complete the task associated to this TODO comment.(ú†˜”üÿÿÿÿ8Âíüš-HúlRINFOZ
+CODE_SMELL
+ksquid:S1068"7Remove this unused "dbConnectionWrapper" private field.(Èˆ•8¿”×ýš-H«nRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineg"<This block of commented-out lines of code should be removed.(òŠßö8òˆÿýš-HžoRMAJORZ
+CODE_SMELL
+€squid:CommentedOutCodeLine‡"<This block of commented-out lines of code should be removed.(Ÿ¢‹²8òˆÿýš-H¢oRMAJORZ
+CODE_SMELL
+csquid:S1068"/Remove this unused "studentRepo" private field.(¿îð8¿”×ýš-H¬nRMAJORZ
+CODE_SMELL

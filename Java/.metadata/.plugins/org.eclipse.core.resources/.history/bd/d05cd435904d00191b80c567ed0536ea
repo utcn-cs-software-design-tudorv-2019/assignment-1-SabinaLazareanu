@@ -1,0 +1,20 @@
+package assigment1.tucn.cs.BLL;
+
+import assigment1.tucn.cs.DAL.StudentRepository;
+import assigment1.tucn.cs.DAL.TeacherRepository;
+
+public class LoginService {
+
+	private StudentRepository studentRepo;
+	private TeacherRepository teacherRepo;
+
+	public LoginService(StudentRepository studentRepo, TeacherRepository teacherRepo) {
+		this.studentRepo = studentRepo;
+		this.teacherRepo = teacherRepo;
+	}
+	
+	public User login() {
+		
+	}
+
+}

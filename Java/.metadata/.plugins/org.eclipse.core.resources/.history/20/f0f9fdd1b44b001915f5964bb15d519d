@@ -1,0 +1,10 @@
+package assigment1.tucn.cs.DAL;
+
+public class User {
+
+	private Long idUser;
+	private String name;
+	private String address;
+	private String PNC;
+	private String ICN;
+}

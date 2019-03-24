@@ -1,0 +1,14 @@
+package assigment1.tucn.cs.BLL.utils;
+
+public enum EObjects {
+
+	STUDENT("Student"), TEACHER("Teacher"), COURS("Cours"),USER("User"),ENROLLEMENT("Enrollement");
+	
+	
+	
+	private EObjects(String Table) {
+		this.table
+	}
+
+	private final String table;
+}

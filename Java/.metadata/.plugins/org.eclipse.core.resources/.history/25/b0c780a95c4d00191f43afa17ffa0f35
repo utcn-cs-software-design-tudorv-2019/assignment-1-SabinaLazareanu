@@ -1,0 +1,7 @@
+package assigment1.tucn.cs.BLL.utils;
+
+public enum EObjects {
+
+	STUDENT("Student"), TEACHER("Teacher"), COURS("Cours"),
+
+}

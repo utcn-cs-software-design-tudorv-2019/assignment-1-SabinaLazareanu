@@ -1,0 +1,28 @@
+package assigment1.tucn.cs.BLL;
+
+import static assigment1.tucn.cs.BLL.utils.SqlQueries.INSERT_STUDENT;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import assigment1.tucn.cs.DAL.Student;
+import assigment1.tucn.cs.database.config.JDBConnectionConfig;
+
+public class StudentRepository extends Repository {
+
+	public StudentRepository(JDBConnectionConfig dbConnectionWrapper) {
+		super(dbConnectionWrapper);
+	}
+
+	public Student insertStudent(Student student) {
+		Connection connection = getConnectionWrapper().getConnection();
+
+		try (PreparedStatement statement = connection.prepareStatement(INSERT_STUDENT);) {
+			statement.setLong(1, id);
+			statement.execute();
+		} catch (Exception e) {
+			throw new ExecutionException(e.getMessage());
+		}
+
+	}
+}

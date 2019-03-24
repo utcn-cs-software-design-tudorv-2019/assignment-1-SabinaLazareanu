@@ -1,0 +1,6 @@
+
+hsquid:S1068"/Remove this unused "teacherRepo" private field.(Å—ƒøÿÿÿÿ8Úñ§Üš-H©pRMAJORZ
+CODE_SMELL
+”squid:S2068"V'PASSWORD' detected in this expression, review this potentially hard-coded credential.(‹ÌÇ¬ùÿÿÿÿ8í¥ÎÜš-HªpRBLOCKERZVULNERABILITY
+squid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Å¤§‰øÿÿÿÿH¨pRMINORZ
+CODE_SMELL
