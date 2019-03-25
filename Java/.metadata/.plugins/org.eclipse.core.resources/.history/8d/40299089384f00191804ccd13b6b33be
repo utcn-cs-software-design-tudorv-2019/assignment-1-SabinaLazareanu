@@ -1,0 +1,9 @@
+package assigment1.tucn.cs.UI;
+
+public class Row {
+	private String cours;
+	private String teacher;
+	private String examDate
+	private String grade;
+
+}

@@ -1,0 +1,16 @@
+package assigment1.tucn.cs.DAL.repository;
+
+import assigment1.tucn.cs.DAL.model.Enrollement;
+import assigment1.tucn.cs.database.config.JDBConnectionConfig;
+
+public class EnrollementRepository extends Repository {
+
+	public EnrollementRepository(JDBConnectionConfig dbConnectionWrapper) {
+		super(dbConnectionWrapper);
+	}
+
+	public Enrollement getEnrollementBySrtudentId(Long id) {
+
+	}
+
+}

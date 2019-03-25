@@ -1,0 +1,26 @@
+
+squid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Å¤§‰øÿÿÿÿHİ~RMINORZ
+CODE_SMELL
+”squid:S2068"V'PASSWORD' detected in this expression, review this potentially hard-coded credential.(‹ÌÇ¬ùÿÿÿÿ8Şº¼°›-Hß~RBLOCKERZVULNERABILITY
+squid:CommentedOutCodeLineH"<This block of commented-out lines of code should be removed.(Åöß—8Şº¼°›-Há~RMAJORZ
+CODE_SMELL
+€squid:CommentedOutCodeLiney"<This block of commented-out lines of code should be removed.(÷°•œ8¨Ù›´›-H¨‹RMAJORZ
+CODE_SMELL
+«squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(âª¥”üÿÿÿÿ8Ó±¹µ›-HRMINORZ
+CODE_SMELL
+¦squid:S1319‹"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¹…©£8¶ûÇµ›-H»RMINORZ
+CODE_SMELL
+fsquid:S1135x"2Complete the task associated to this TODO comment.(…ïœ†8¬²Šµ›-HÑŒRINFOZ
+CODE_SMELL
+”squid:S2293‘"YReplace the type specification in this constructor call with the diamond operator ("<>").(ºÒîÉşÿÿÿÿ8–Ìøµ›-HÄRMINORZ
+CODE_SMELL
+¦squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ôÉğ¢8ª êµ›-HRMINORZ
+CODE_SMELL
+•squid:S1488Œ"_Immediately return this expression instead of assigning it to the temporary variable "courses".(òò¤á8¹á×µ›-HåRMINORZ
+CODE_SMELL
+’squid:S2293m"YReplace the type specification in this constructor call with the diamond operator ("<>").(¢ôÆ—øÿÿÿÿ8¸ïì°›-HàRMINORZ
+CODE_SMELL
+ƒsquid:HiddenFieldCheck7"?Rename "currentUser" which hides the field declared at line 29.(¹È”÷ûÿÿÿÿ8Şº¼°›-Hà~RMAJORZ
+CODE_SMELL
+”squid:S2293ƒ"YReplace the type specification in this constructor call with the diamond operator ("<>").(ƒü§«úÿÿÿÿ8ÿå“¶›-HÁRMINORZ
+CODE_SMELL

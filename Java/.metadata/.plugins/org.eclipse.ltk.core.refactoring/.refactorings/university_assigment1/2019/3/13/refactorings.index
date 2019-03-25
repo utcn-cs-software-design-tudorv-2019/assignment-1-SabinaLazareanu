@@ -19,3 +19,19 @@
 1553457945861	Rename local variable 'ch'
 1553458181635	Rename method 'getCurrentUserUser'
 1553458354540	Rename local variable 'id'
+1553531387209	Extract method 'updateCurrentUserInfo'
+1553533934770	Rename field 'student'
+1553534446037	Rename field 'student'
+1553534940518	Move compilation units
+1553535001523	Move compilation units
+1553535375945	Rename local variable 'object'
+1553536834683	Delete element
+1553536889273	Rename type 'LoginService'
+1553537040545	Rename local variable 'enrollement'
+1553539142486	Rename local variable 'teach'
+1553546928223	Rename method 'getUserWithId'
+1553547010519	Rename local variable 'student'
+1553547021934	Rename local variable 'studentUser'
+1553548272294	Rename method 'getPossibleCoursesForStudent'
+1553548367638	Rename local variable 'cours'
+1553548870859	Rename local variable 'idStuLong'

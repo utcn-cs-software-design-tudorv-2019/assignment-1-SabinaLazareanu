@@ -1,5 +1,7 @@
 package assigment1.tucn.cs.DAL;
 
+import assigment1.tucn.cs.DAL.model.User;
+
 public class UserBuilder {
 
 	private User user;

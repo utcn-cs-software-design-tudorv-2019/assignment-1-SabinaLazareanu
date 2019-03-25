@@ -1,0 +1,8 @@
+
+ˆsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÔúéêHú}RMINORZ
+CODE_SMELL
+Xsquid:S11481"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHû}RMINORZVULNERABILITY
+Ï%squid:RedundantThrowsDeclarationCheck("‚Remove the declaration of thrown exception 'assigment1.tucn.cs.DAL.ExecutionException', as it cannot be thrown from method's body.(ê˜Ë¿ûÿÿÿÿHü}RMINORZ
+CODE_SMELL
+xsquid:CommentedOutCodeLine0"<This block of commented-out lines of code should be removed.(×ùåŸHý}RMAJORZ
+CODE_SMELL

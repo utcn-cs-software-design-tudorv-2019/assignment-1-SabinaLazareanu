@@ -1,0 +1,13 @@
+
+xsquid:S3973C"GUse indentation to denote the code conditionally executed by this "if".(˙õ……HÍéRCRITICALZ
+CODE_SMELL
+xsquid:S3973H"GUse indentation to denote the code conditionally executed by this "if".(æÓ–ÎHÎéRCRITICALZ
+CODE_SMELL
+xsquid:S3973M"GUse indentation to denote the code conditionally executed by this "if".(ç≠◊ÕHÏéRCRITICALZ
+CODE_SMELL
+wsquid:S3973R"GUse indentation to denote the code conditionally executed by this "if".(ˇé¡HÌéRCRITICALZ
+CODE_SMELL
+âsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ì‡¥¢HÓéRMINORZ
+CODE_SMELL
+Ésquid:S37768"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(ç‹—„HÔéRCRITICALZ
+CODE_SMELL

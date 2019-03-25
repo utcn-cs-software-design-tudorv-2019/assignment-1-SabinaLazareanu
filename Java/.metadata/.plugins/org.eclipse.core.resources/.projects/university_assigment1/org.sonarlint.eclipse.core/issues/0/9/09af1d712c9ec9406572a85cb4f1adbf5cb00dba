@@ -1,26 +1,36 @@
 
-_squid:S1148U"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8´°ûıš-HïnRMINORZVULNERABILITY
-ˆsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¡ÇÊšHÙlRMINORZ
+vsquid:S1858“"A"getText" returns a string, there's no need to call "toString()".(áÓÒğ8´°ûıš-HÉ{RMINORZ
 CODE_SMELL
-squid:S1450"ZRemove the "currentUser" field and declare it as a local variable in the relevant methods.(ûË¥ó8µ‰Æÿš-HåqRMINORZ
+ˆsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¡ÇÊšHË{RMINORZ
 CODE_SMELL
-usquid:S1858F"A"getText" returns a string, there's no need to call "toString()".(½ï û8´°ûıš-HònRMINORZ
+s
+squid:S106Å"9Replace this use of System.out or System.err by a logger.(”Ò¦¢ûÿÿÿÿ8èÉå´›-H”ŒRMAJORZ
 CODE_SMELL
-usquid:S1858G"A"getText" returns a string, there's no need to call "toString()".(áÓÒğ8´°ûıš-HónRMINORZ
+asquid:S1148¡"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÿéÚ³›-HŠRMINORZVULNERABILITY
+jsquid:S1135q"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8Ê¡­›-HÕ{RINFOZ
 CODE_SMELL
-Œsquid:S1450"XRemove the "checkUser" field and declare it as a local variable in the relevant methods.(€Ñ¸›8´°ûıš-HğnRMINORZ
+Œsquid:S1450("XRemove the "checkUser" field and declare it as a local variable in the relevant methods.(€Ñ¸›8´°ûıš-HÊ{RMINORZ
 CODE_SMELL
-l
-squid:S106I"9Replace this use of System.out or System.err by a logger.(®ˆÓ8´°ûıš-HônRMAJORZ
+_squid:S1148r"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡®›-Hî|RMINORZVULNERABILITY
+•squid:S1450)"\Remove the "checkPassword" field and declare it as a local variable in the relevant methods.(•ìıÜıÿÿÿÿ8´°ûıš-HÌ{RMINORZ
 CODE_SMELL
-csquid:S00108K")Either remove or fill this block of code.(«Í£ƒşÿÿÿÿ8´°ûıš-HõnRMAJORZ
+lsquid:S1135 "2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8‡®›-HÌ…RINFOZ
 CODE_SMELL
-l
-squid:S106A"9Replace this use of System.out or System.err by a logger.(“Ïÿƒ8áüçüš-HÛlRMAJORZ
+lsquid:S1135À"2Complete the task associated to this TODO comment.(œ†¥àşÿÿÿÿ8´°ûıš-HŠRINFOZ
 CODE_SMELL
-jsquid:S1135M"2Complete the task associated to this TODO comment.(ÊµÊÊıÿÿÿÿ8÷­¸şš-HpRINFOZ
+squid:CommentedOutCodeLineÍ"<This block of commented-out lines of code should be removed.(à¢œ8ÀÂ´›-Hİ‹RMAJORZ
 CODE_SMELL
-jsquid:S1135T"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8´°ûıš-HönRINFOZ
+vsquid:S1858’"A"getText" returns a string, there's no need to call "toString()".(½ï û8´°ûıš-HÎ{RMINORZ
 CODE_SMELL
-•squid:S1450"\Remove the "checkPassword" field and declare it as a local variable in the relevant methods.(•ìıÜıÿÿÿÿ8´°ûıš-HñnRMINORZ
+…squid:CommentedOutCodeLineU"<This block of commented-out lines of code should be removed.(óùĞÿıÿÿÿÿ8Şïà³›-HÜ‰RMAJORZ
 CODE_SMELL
+`squid:S1148~"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÆË”³›-H¬…RMINORZVULNERABILITY
+`squid:S00108–")Either remove or fill this block of code.(ÌÇ‡Á8Ê¡­›-HË…RMAJORZ
+CODE_SMELL
+vsquid:S1854Ñ";Remove this useless assignment to local variable "courses".(ğ Çóùÿÿÿÿ8Œßÿµ›-HãRMAJORZ
+CODE_SMELL
+ksquid:S1135}"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8ÿéÚ³›-H·‰RINFOZ
+CODE_SMELL
+ssquid:S2696•"6Make the enclosing method "static" or remove this set.(î¾Ìşşÿÿÿÿ8Ê¡­›-HÒ{RCRITICALZ
+CODE_SMELL
+`squid:S1148Á"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ê¡­›-HÏ{RMINORZVULNERABILITY

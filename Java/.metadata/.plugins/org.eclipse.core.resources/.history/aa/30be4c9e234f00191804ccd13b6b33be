@@ -1,0 +1,44 @@
+package assigment1.tucn.cs.DAL;
+
+import java.sql.Date;
+
+public class Cours {
+
+	private Long idCours;
+	private String coursName;
+	private Date examDate;
+	private Long teacherId;
+
+	public Long getIdCours() {
+		return idCours;
+	}
+
+	public void setIdCours(Long idCours) {
+		this.idCours = idCours;
+	}
+
+	public String getCoursName() {
+		return coursName;
+	}
+
+	public void setCoursName(String coursName) {
+		this.coursName = coursName;
+	}
+
+	public Date getExamDate() {
+		return examDate;
+	}
+
+	public void setExamDate(Date examDate) {
+		this.examDate = examDate;
+	}
+
+	public Long getTeacherId() {
+		return teacherId;
+	}
+
+	public void setTeacherId(Long teacherId) {
+		this.teacherId = teacherId;
+	}
+
+}

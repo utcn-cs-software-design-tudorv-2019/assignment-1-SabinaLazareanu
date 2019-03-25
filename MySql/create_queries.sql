@@ -4,8 +4,6 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
-
-drop database university_db;
 -- -----------------------------------------------------
 -- Schema university_db
 -- -----------------------------------------------------
@@ -37,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `university_db`.`Student` (
   `User_id` INT NOT NULL,
   `user_name` VARCHAR(255) NULL,
   `password` VARCHAR(255) NULL,
-  `group` VARCHAR(255) NULL,
+  `groupF` VARCHAR(255) NULL,
   PRIMARY KEY (`id`, `User_id`),
   INDEX `fk_Student_User1_idx` (`User_id` ASC),
   CONSTRAINT `fk_Student_User1`

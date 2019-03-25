@@ -5,7 +5,9 @@ import static assigment1.tucn.cs.BLL.utils.ETables.TEACHER;
 
 import java.util.List;
 
-import assigment1.tucn.cs.BLL.LoginService;
+import assigment1.tucn.cs.BLL.StudentService;
+import assigment1.tucn.cs.DAL.repository.StudentRepository;
+import assigment1.tucn.cs.DAL.repository.TeacherRepository;
 import assigment1.tucn.cs.UI.LoginPage;
 import assigment1.tucn.cs.database.config.JDBConnectionConfig;
 import assigment1.tucn.cs.database.config.JDBConnectionException;
@@ -48,7 +50,7 @@ public class App {
 			StudentRepository studentRepo = new StudentRepository(dbConnectionWrapper);
 			TeacherRepository teacherRepo = new TeacherRepository(dbConnectionWrapper);
 
-			LoginService logineService = new LoginService(studentRepo, teacherRepo);
+			StudentService logineService = new StudentService(studentRepo, teacherRepo);
 		} catch (JDBConnectionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

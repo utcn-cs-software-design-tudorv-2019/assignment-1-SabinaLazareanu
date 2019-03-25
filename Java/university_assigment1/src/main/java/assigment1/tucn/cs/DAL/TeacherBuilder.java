@@ -1,5 +1,7 @@
 package assigment1.tucn.cs.DAL;
 
+import assigment1.tucn.cs.DAL.model.Teacher;
+
 public class TeacherBuilder {
 
 	private Teacher teacher;

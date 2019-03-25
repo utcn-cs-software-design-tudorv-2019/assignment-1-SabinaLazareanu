@@ -1,0 +1,52 @@
+package assigment1.tucn.cs.DAL.repository;
+
+import static assigment1.tucn.cs.BLL.utils.SqlQueries.SELECT_BY_ID_QUERY;
+import static assigment1.tucn.cs.DAL.repository.Repository.PATTERN;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import assigment1.tucn.cs.DAL.ExecutionException;
+import assigment1.tucn.cs.DAL.model.Enrollement;
+import assigment1.tucn.cs.database.config.JDBConnectionConfig;
+
+public class EnrollementRepository extends Repository {
+
+	public EnrollementRepository(JDBConnectionConfig dbConnectionWrapper) {
+		super(dbConnectionWrapper);
+	}
+
+	public Enrollement getEnrollementBySrtudentId(Long id) {
+		Connection connection = getConnectionWrapper().getConnection();
+		Object object = null;
+
+		try (PreparedStatement statement = connection
+				.prepareStatement(SELECT_BY_ID_QUERY.replace(PATTERN, table.getValue()));) {
+			statement.setLong(1, id);
+			try (ResultSet resultSet = statement.executeQuery();) {
+				if (resultSet.next()) {
+					switch (table) {
+					case STUDENT:
+						object = getStudentFromResultSet(resultSet);
+						break;
+					case TEACHER:
+						object = getTeacherFromResultSet(resultSet);
+						break;
+					case USER:
+						object = getUserFromResultSet(resultSet);
+						break;
+					default:
+						break;
+					}
+				}
+			}
+		} catch (SQLException e) {
+			throw new ExecutionException(e.getMessage());
+		}
+
+		return object;
+	}
+
+}

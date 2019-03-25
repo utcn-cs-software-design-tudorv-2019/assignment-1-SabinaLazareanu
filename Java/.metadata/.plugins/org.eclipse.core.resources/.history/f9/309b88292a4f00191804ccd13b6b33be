@@ -1,0 +1,5 @@
+package assigment1.tucn.cs.DAL.repository;
+
+public class CoursRepository extends Repository {
+
+}

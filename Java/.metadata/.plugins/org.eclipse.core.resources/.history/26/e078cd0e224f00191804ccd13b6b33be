@@ -1,0 +1,12 @@
+package assigment1.tucn.cs.DAL;
+
+import java.sql.Date;
+
+public class Cours {
+
+	private Long idCours;
+	private String coursName;
+	private Date examDate;
+	private Long teacherId;
+
+}

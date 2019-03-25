@@ -1,0 +1,118 @@
+package assigment1.tucn.cs.BLL;
+
+import static assigment1.tucn.cs.BLL.utils.ETables.COURS;
+import static assigment1.tucn.cs.BLL.utils.ETables.STUDENT;
+import static assigment1.tucn.cs.BLL.utils.ETables.TEACHER;
+import static assigment1.tucn.cs.BLL.utils.ETables.USER;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import assigment1.tucn.cs.DAL.ExecutionException;
+import assigment1.tucn.cs.DAL.model.Cours;
+import assigment1.tucn.cs.DAL.model.Enrollement;
+import assigment1.tucn.cs.DAL.model.Student;
+import assigment1.tucn.cs.DAL.model.Teacher;
+import assigment1.tucn.cs.DAL.model.User;
+import assigment1.tucn.cs.DAL.repository.CoursRepository;
+import assigment1.tucn.cs.DAL.repository.EnrollementRepository;
+import assigment1.tucn.cs.DAL.repository.StudentRepository;
+import assigment1.tucn.cs.DAL.repository.TeacherRepository;
+import assigment1.tucn.cs.DAL.repository.UserRepository;
+import assigment1.tucn.cs.UI.Row;
+
+public class StudentService {
+
+	private static final String ADMIN_USER = "admin";
+	private static final String ADMIN_PASSWORD = "admin";
+
+	private Long currentUser;
+
+	public Long getCurrentUser() {
+		return currentUser;
+	}
+
+	public void setCurrentUser(Long currentUser) {
+		this.currentUser = currentUser;
+	}
+
+	private StudentRepository studentRepo;
+	private UserRepository userRepo;
+	private TeacherRepository teacherRepo;
+	private EnrollementRepository enrolementRepo;
+	private CoursRepository coursRepo;
+
+	public StudentService(StudentRepository studentRepo, UserRepository userRepo, TeacherRepository teacherRepo,
+			EnrollementRepository enrollementRepo, CoursRepository coursRepo) {
+		this.studentRepo = studentRepo;
+		this.userRepo = userRepo;
+		this.teacherRepo = teacherRepo;
+		this.enrolementRepo = enrollementRepo;
+		this.coursRepo = coursRepo;
+	}
+
+	public User login(String userName, String password) throws ExecutionException {
+		User currentUser = null;
+		if (password.equalsIgnoreCase(ADMIN_USER)) {
+			if (userName.equalsIgnoreCase(ADMIN_PASSWORD)) {
+				currentUser = new Teacher();
+			}
+		} else {
+			List<Student> students = (List<Student>) studentRepo.findAll(STUDENT);
+			for (Student student : students) {
+				if (student.getUserName().equals(userName) && student.getPassword().equals(password)) {
+					currentUser = student;
+					User studentUser;
+					studentUser = (User) userRepo.getById(student._getIdUser(), USER);
+					currentUser.setIdUser(studentUser.getIdUser());
+					currentUser.setName(studentUser.getName());
+					currentUser.setPNC(studentUser.getPNC());
+					currentUser.setAddress(studentUser.getAddress());
+					currentUser.setICN(studentUser.getICN());
+					// System.out.println(currentUser.toString());
+				}
+			}
+		}
+
+		return currentUser;
+	}
+
+	public void updateStudent(User student) throws ExecutionException {
+		studentRepo.update((Student) student);
+		userRepo.update(student);
+	}
+
+	public User getUserWithId(Long id) throws ExecutionException {
+		Student student = (Student) (studentRepo.getById(id, STUDENT));
+		User studentUser = (User) userRepo.getById(student._getIdUser(), USER);
+		student.setIdUser(studentUser.getIdUser());
+		student.setName(studentUser.getName());
+		student.setPNC(studentUser.getPNC());
+		student.setAddress(studentUser.getAddress());
+		student.setICN(studentUser.getICN());
+		return student;
+	}
+
+	public List<Row> getStudentEnrollements(Long id) throws ExecutionException {
+
+		List<Row> rows = new ArrayList<ArrayList<String>>();
+		List<Enrollement> enrollements = enrolementRepo.getEnrollementsBySrtudentId(id);
+		Cours cours = null;
+		Teacher teacher = null;
+		for (int i = 0; i < enrollements.size(); i++) {
+			long coursIdFromEnrollement = enrollements.get(i).getCours_id();
+			cours = (Cours) coursRepo.getById(coursIdFromEnrollement, COURS);
+			teacher = (Teacher) teacherRepo.getById(cours.getTeacherId(), TEACHER);
+			String coursName = cours.getCoursName();
+			String teacherName = teacher.getName();
+			String examDate = cours.getExamDate().toString();
+			String grade = "" + enrollements.get(i).getGrade();
+			rows.get(i).set(0, coursName);
+			rows.get(i).set(1, teacherName);
+			rows.get(i).set(2, examDate);
+			rows.get(i).set(3, grade);
+		}
+		return rows;
+	}
+
+}

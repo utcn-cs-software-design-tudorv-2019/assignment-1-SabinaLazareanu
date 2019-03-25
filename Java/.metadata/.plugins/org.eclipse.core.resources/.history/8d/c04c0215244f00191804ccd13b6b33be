@@ -1,0 +1,11 @@
+package assigment1.tucn.cs.DAL.repository;
+
+import assigment1.tucn.cs.DAL.model.Enrollement;
+
+public class EnrollementRepository extends Repository {
+
+	public Enrollement getEnrollementBySrtudentId(Long id) {
+
+	}
+
+}

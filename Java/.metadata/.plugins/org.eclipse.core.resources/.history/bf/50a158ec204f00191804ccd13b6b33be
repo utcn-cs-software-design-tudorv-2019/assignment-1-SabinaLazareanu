@@ -1,0 +1,8 @@
+package assigment1.tucn.cs.DAL;
+
+public class Enrollement {
+	private Long Student_id;
+	private Long Cours_id;
+	private float grade;
+
+}

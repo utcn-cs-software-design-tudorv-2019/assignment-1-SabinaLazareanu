@@ -10,4 +10,6 @@ public class SqlQueries {
 	public static final String INSERT_USER = "Insert into User (name,address, PNC,ICN) values(?,?,?,?);";
 	public static final String UPDATE_USER = "Update User set name=?, address=?, pnc=?,icn=? where id =?;";
 	public static final String UPDATE_STUDENT = "Update Student set groupF=? where id =?;";
+	public static final String SELECT_BY_ID_STUDENT_ENROLLEMENT = "Select * from Enrollement where Student_id=?;";
+
 }

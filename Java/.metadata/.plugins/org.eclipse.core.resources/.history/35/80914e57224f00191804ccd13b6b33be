@@ -1,0 +1,40 @@
+package assigment1.tucn.cs.DAL;
+
+public class CoursBuilder {
+
+	private Student student;
+
+	public CoursBuilder() {
+		student = new Student();
+	}
+
+	public CoursBuilder setId(Long id) {
+		student.setIdStudent(id);
+		return this;
+	}
+
+	public CoursBuilder setIdUser(Long id) {
+		student._setIdUser(id);
+		return this;
+	}
+
+	public CoursBuilder setGroup(String group) {
+		student.setGroup(group);
+		return this;
+	}
+
+	public CoursBuilder setUserName(String userName) {
+		student.setUserName(userName);
+		return this;
+	}
+
+	public CoursBuilder setPassword(String password) {
+		student.setPassword(password);
+		return this;
+	}
+
+	public Student build() {
+		return student;
+	}
+
+}

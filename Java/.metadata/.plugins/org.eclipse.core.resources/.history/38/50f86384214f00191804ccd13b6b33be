@@ -1,0 +1,40 @@
+package assigment1.tucn.cs.DAL;
+
+public class EnrollementBuilder {
+
+	private Enrollement enrollement;
+
+	public EnrollementBuilder() {
+		enrollement = new Enrollement();
+	}
+
+	public EnrollementBuilder setId(Long id) {
+		enrollement.setIdStudent(id);
+		return this;
+	}
+
+	public EnrollementBuilder setIdUser(Long id) {
+		enrollement._setIdUser(id);
+		return this;
+	}
+
+	public EnrollementBuilder setGroup(String group) {
+		enrollement.setGroup(group);
+		return this;
+	}
+
+	public EnrollementBuilder setUserName(String userName) {
+		enrollement.setUserName(userName);
+		return this;
+	}
+
+	public EnrollementBuilder setPassword(String password) {
+		enrollement.setPassword(password);
+		return this;
+	}
+
+	public Student build() {
+		return enrollement;
+	}
+
+}

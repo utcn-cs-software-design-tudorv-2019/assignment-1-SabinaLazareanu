@@ -1,6 +1,8 @@
 
-hsquid:S1068"/Remove this unused "teacherRepo" private field.(Å—ƒøÿÿÿÿ8Úñ§Üš-H©pRMAJORZ
+ƒsquid:HiddenFieldCheck'"?Rename "currentUser" which hides the field declared at line 20.(¹È”÷ûÿÿÿÿ8À†ì­›-H·|RMAJORZ
 CODE_SMELL
-”squid:S2068"V'PASSWORD' detected in this expression, review this potentially hard-coded credential.(‹ÌÇ¬ùÿÿÿÿ8í¥ÎÜš-HªpRBLOCKERZVULNERABILITY
-squid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Å¤§‰øÿÿÿÿH¨pRMINORZ
+squid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Å¤§‰øÿÿÿÿHµ|RMINORZ
 CODE_SMELL
+squid:CommentedOutCodeLine8"<This block of commented-out lines of code should be removed.(Åöß—8èèÿ­›-HÑ|RMAJORZ
+CODE_SMELL
+”squid:S2068"V'PASSWORD' detected in this expression, review this potentially hard-coded credential.(‹ÌÇ¬ùÿÿÿÿ8í¥ÎÜš-H¶|RBLOCKERZVULNERABILITY
