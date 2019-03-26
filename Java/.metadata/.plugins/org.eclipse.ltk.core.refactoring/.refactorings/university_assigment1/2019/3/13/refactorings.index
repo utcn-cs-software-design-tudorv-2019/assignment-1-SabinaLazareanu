@@ -35,3 +35,18 @@
 1553548272294	Rename method 'getPossibleCoursesForStudent'
 1553548367638	Rename local variable 'cours'
 1553548870859	Rename local variable 'idStuLong'
+1553603677925	Rename method 'insertStudent'
+1553604712261	Rename local variable 'studentStage'
+1553606817123	Rename method 'selectObjectWithMaxID'
+1553607859646	Rename method 'registerButtonClicked'
+1553608149674	Rename type 'Validate'
+1553626147826	Rename field 'cPaswordRegister'
+1553628198823	Rename local variable 'student'
+1553628686282	Move method
+1553628688407	Move method
+1553628717633	Move method
+1553628723702	Move method
+1553628730433	Move method
+1553628733973	Move method
+1553630478370	Rename type 'Row'
+1553634793846	Delete element

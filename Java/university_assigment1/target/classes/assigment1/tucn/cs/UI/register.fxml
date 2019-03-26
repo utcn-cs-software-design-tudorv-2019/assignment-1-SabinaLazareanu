@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assigment1.tucn.cs.UI.Controller">
+   <children>
+      <AnchorPane layoutX="201.0" layoutY="284.0">
+         <children>
+            <TitledPane animated="false" layoutX="-201.0" layoutY="-316.0" prefHeight="509.0" prefWidth="541.0" text="Register">
+               <content>
+                  <AnchorPane prefHeight="477.0" prefWidth="540.0">
+                     <children>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="130.0" layoutY="38.0" text="Name:" />
+                              <Label layoutX="142.0" layoutY="124.0" text="PNC:" />
+                              <Label layoutX="145.0" layoutY="170.0" text="ICN:" />
+                              <Label layoutX="117.0" layoutY="80.0" text="Address:" />
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="136.0" layoutY="212.0" text="Group:" />
+                        <Label layoutX="111.0" layoutY="248.0" text="UserName:" />
+                        <Label layoutX="115.0" layoutY="288.0" text="Password:" />
+                        <Label layoutX="61.0" layoutY="326.0" text="Confirm Password:" />
+                        <TextField fx:id="nameRegister" layoutX="200.0" layoutY="35.0" />
+                        <TextField fx:id="addressRegister" layoutX="200.0" layoutY="75.0" />
+                        <TextField fx:id="pncRegister" layoutX="200.0" layoutY="120.0" />
+                        <TextField fx:id="icnRegister" layoutX="200.0" layoutY="165.0" />
+                        <TextField fx:id="groupRegister" layoutX="200.0" layoutY="207.0" />
+                        <TextField fx:id="userNameRegister" layoutX="200.0" layoutY="243.0" />
+                        <Button fx:id="registerButtonRegister" layoutX="248.0" layoutY="407.0" mnemonicParsing="false" onAction="#register" text="Register" />
+                        <Label fx:id="registerMessage" layoutX="177.0" layoutY="364.0" text="  " />
+                        <PasswordField fx:id="passwordRegister" layoutX="200.0" layoutY="283.0" />
+                        <PasswordField fx:id="cPasswordRegister" layoutX="200.0" layoutY="321.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

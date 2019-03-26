@@ -19,22 +19,12 @@ import assigment1.tucn.cs.DAL.repository.EnrollementRepository;
 import assigment1.tucn.cs.DAL.repository.StudentRepository;
 import assigment1.tucn.cs.DAL.repository.TeacherRepository;
 import assigment1.tucn.cs.DAL.repository.UserRepository;
-import assigment1.tucn.cs.UI.Row;
+import assigment1.tucn.cs.UI.CoursEnrollement;
 
 public class StudentService {
 
 	private static final String ADMIN_USER = "admin";
 	private static final String ADMIN_PASSWORD = "admin";
-
-	private Long currentUser;
-
-	public Long getCurrentUser() {
-		return currentUser;
-	}
-
-	public void setCurrentUser(Long currentUser) {
-		this.currentUser = currentUser;
-	}
 
 	private StudentRepository studentRepo;
 	private UserRepository userRepo;
@@ -69,7 +59,6 @@ public class StudentService {
 					currentUser.setPNC(studentUser.getPNC());
 					currentUser.setAddress(studentUser.getAddress());
 					currentUser.setICN(studentUser.getICN());
-					// System.out.println(currentUser.toString());
 				}
 			}
 		}
@@ -104,9 +93,9 @@ public class StudentService {
 		return teacher;
 	}
 
-	public List<Row> getStudentEnrollements(Long id) throws ExecutionException {
+	public List<CoursEnrollement> getStudentEnrollements(Long id) throws ExecutionException {
 
-		List<Row> rows = new ArrayList<Row>();
+		List<CoursEnrollement> rows = new ArrayList<CoursEnrollement>();
 		List<Enrollement> enrollements = enrolementRepo.getEnrollementsBySrtudentId(id);
 		Cours cours = null;
 		Teacher teacher = null;
@@ -120,7 +109,7 @@ public class StudentService {
 			// TODO
 			String examDate = "maine";// cours.getExamDate().toString();
 			String grade = "" + enrollements.get(i).getGrade();
-			Row row = new Row(coursName, teacherName, examDate, grade);
+			CoursEnrollement row = new CoursEnrollement(coursName, teacherName, examDate, grade);
 			rows.add(row);
 		}
 		return rows;
@@ -142,19 +131,52 @@ public class StudentService {
 	}
 
 	public ArrayList<Cours> getPossibleOptionsForCoursForStudent(Long idStudent) throws ExecutionException {
-		ArrayList<Cours> possibleCourses = new ArrayList<Cours>();
+		ArrayList<Cours> possibleCourses = null;
 		ArrayList<Cours> allCourses = getAllPossibleCourses();
 		ArrayList<Cours> takenCourses = getCoursesForStudent(idStudent);
 
-		for (Cours possibleCours : allCourses) {
-			for (Cours existentCours : takenCourses) {
-				if (!possibleCours.equals(existentCours)) {
+		if (!(takenCourses.size() == 0)) {
+			possibleCourses = new ArrayList<>();
+			for (Cours possibleCours : allCourses) {
+				if (!takenCourses.contains(possibleCours)) {
 					possibleCourses.add(possibleCours);
 				}
 			}
+		} else {
+			possibleCourses = new ArrayList<Cours>(allCourses);
 		}
 		return possibleCourses;
 
+	}
+
+	public User addUser(User newUser) throws ExecutionException {
+		userRepo.insertUser(newUser);
+		User addedUser = (User) userRepo.getObjectWithMaxID(USER);
+		((Student) newUser)._setIdUser(addedUser.getIdUser());
+		studentRepo.insertStudent((Student) newUser);
+		Student addedStudent = (Student) studentRepo.getObjectWithMaxID(STUDENT);
+
+		addedStudent.setAddress(addedUser.getAddress());
+		addedStudent.setName(addedUser.getName());
+		addedStudent.setPNC(addedUser.getPNC());
+		addedStudent.setICN(addedUser.getICN());
+		addedStudent.setIdUser(addedUser.getIdUser());
+		return addedStudent;
+	}
+
+	public Cours getSelectedCours(String selectedCours) throws ExecutionException {
+		List<Cours> courses = (List<Cours>) coursRepo.findAll(COURS);
+		for (Cours cours : courses) {
+			if (cours.getCoursName().equals(selectedCours)) {
+				return cours;
+			}
+		}
+		return null;
+
+	}
+
+	public void addEnrollement(Enrollement enrollement) throws ExecutionException {
+		enrolementRepo.insertEnrollement(enrollement);
 	}
 
 }

@@ -6,9 +6,11 @@ import java.util.List;
 import java.util.Objects;
 
 import assigment1.tucn.cs.BLL.StudentService;
+import assigment1.tucn.cs.BLL.Validator;
 import assigment1.tucn.cs.DAL.ExecutionException;
 import assigment1.tucn.cs.DAL.StudentBuilder;
 import assigment1.tucn.cs.DAL.model.Cours;
+import assigment1.tucn.cs.DAL.model.Enrollement;
 import assigment1.tucn.cs.DAL.model.Student;
 import assigment1.tucn.cs.DAL.model.Teacher;
 import assigment1.tucn.cs.DAL.model.User;
@@ -24,6 +26,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -37,6 +41,7 @@ import javafx.stage.Stage;
 public class Controller {
 
 	private static final String SCHEMA = "university_db";
+	private static final float INITIAL_GRADE = -1.0f;
 	private String checkUser;
 	private String checkPassword;
 	private static User currentStudent;
@@ -48,9 +53,17 @@ public class Controller {
 	private CoursRepository coursRepo = new CoursRepository(dbConnectionWrapper);
 	private StudentService loginService = new StudentService(studentRepo, userRepo, teacherRepo, enrolementRepo,
 			coursRepo);
-
 	@FXML
 	private Button loginButton;
+
+	@FXML
+	private Button registerButton;
+
+	@FXML
+	private Button registerButtonRegister;
+
+	@FXML
+	private Button refreshButton;
 
 	@FXML
 	private Label messageField;
@@ -82,26 +95,85 @@ public class Controller {
 	@FXML
 	private TableView tabelView;
 
-	
-	//TODO: FIX This!
+	@FXML
+	private ComboBox<String> comboBox;
+
+	@FXML
+	private TextField pncRegister;
+
+	@FXML
+	private Label registerMessage;
+
+	@FXML
+	private TextField icnRegister;
+
+	@FXML
+	private TextField nameRegister;
+
+	@FXML
+	private TextField groupRegister;
+
+	@FXML
+	private TextField addressRegister;
+
+	@FXML
+	private TextField passwordRegister;
+
+	@FXML
+	private TextField userNameRegister;
+
+	@FXML
+	private TextField cPasswordRegister;
+
+	Alert alert = new Alert(AlertType.INFORMATION);
+
+	// TODO fix this instantiation
 	private TableColumn coursColumn = new TableColumn("Cours");
 	private TableColumn gradeColumn = new TableColumn("Teacher");
 	private TableColumn teacherColumn = new TableColumn("Exam Date");
 	private TableColumn examColumn = new TableColumn("Grade");
-//	@FXML
-//	private TableColumn coursColumn;
-//
-//	@FXML
-//	private TableColumn gradeColumn;
-//
-//	@FXML
-//	private TableColumn teacherColumn;
-//
-//	@FXML
-//	private TableColumn examColumn;
 
 	@FXML
-	private ComboBox<String> comboBox;
+	void enroleButton(ActionEvent event) throws ExecutionException {
+		String selectedCours = comboBox.getValue();
+		Cours cours = loginService.getSelectedCours(selectedCours);
+		Enrollement enrollement = new Enrollement();
+		enrollement.setStudent_id(((Student) currentStudent).getIdStudent());
+		enrollement.setCours_id(cours.getIdCours());
+		enrollement.setGrade(INITIAL_GRADE);
+		loginService.addEnrollement(enrollement);
+		refreshButton.fire();
+		showAllertMessage("Enrollement with success!");
+	}
+
+	@FXML
+	void register(ActionEvent event) {
+		Student newUser = new Student();
+		newUser.setName(nameRegister.getText());
+		newUser.setAddress(addressRegister.getText());
+		newUser.setPNC(pncRegister.getText());
+		newUser.setICN(icnRegister.getText());
+		newUser.setGroup(groupRegister.getText());
+		newUser.setUserName(userNameRegister.getText());
+		newUser.setPassword(passwordRegister.getText());
+
+		Validator validator = new Validator();
+		if (validator.validatePassword(passwordRegister.getText(), cPasswordRegister.getText())) {
+			try {
+				currentStudent = loginService.addUser(newUser);
+				Stage stage = (Stage) registerButtonRegister.getScene().getWindow();
+				stage.close();
+				studentPage();
+			} catch (ExecutionException e) {
+				showAllertMessage(e.getMessage());
+			} catch (IOException e) {
+				showAllertMessage(e.getMessage());
+			}
+		} else {
+			registerMessage.setText("Confirmed password is incorrect!");
+		}
+
+	}
 
 	@FXML
 	void refresh(ActionEvent event) {
@@ -112,8 +184,7 @@ public class Controller {
 			table();
 			comboBox();
 		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			showAllertMessage(e.getMessage());
 		}
 
 	}
@@ -123,24 +194,11 @@ public class Controller {
 		try {
 			Student studentToBeUpdated = updateCurrentUserInfo();
 			loginService.updateStudent(studentToBeUpdated);
+			refreshButton.fire();
+			showAllertMessage("Update done with succes!");
 		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			showAllertMessage(e.getMessage());
 		}
-	}
-
-	private Student updateCurrentUserInfo() {
-		Student studentToBeUpdated = new StudentBuilder().setGroup(groupField.getText()).build();
-		studentToBeUpdated.setIdStudent(((Student) currentStudent).getIdStudent());
-		studentToBeUpdated._setIdUser(((Student) currentStudent)._getIdUser());
-		studentToBeUpdated.setUserName(((Student) currentStudent).getUserName());
-		studentToBeUpdated.setPassword(((Student) currentStudent).getPassword());
-		studentToBeUpdated.setIdUser(currentStudent.getIdUser());
-		studentToBeUpdated.setName(nameField.getText());
-		studentToBeUpdated.setAddress(addressField.getText());
-		studentToBeUpdated.setPNC(pncField.getText());
-		studentToBeUpdated.setICN(icnField.getText());
-		return studentToBeUpdated;
 	}
 
 	@FXML
@@ -159,51 +217,55 @@ public class Controller {
 				messageField.setText("Username or password invalid!!");
 			}
 		} catch (ExecutionException | IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			showAllertMessage(e.getMessage());
 		}
 
 	}
 
-	private void studentPage() throws IOException {
-		Stage studentStage = new Stage();
-		studentStage.setTitle("Student:");
-		Pane pane = FXMLLoader.load(getClass().getResource("student.fxml"));
-		studentStage.setScene(new Scene(pane, 1011, 540));
-		studentStage.show();
-
+	@FXML
+	void registerFromLoginButtonClicked(ActionEvent event) {
+		try {
+			Stage stage = (Stage) registerButton.getScene().getWindow();
+			stage.close();
+			registerPage();
+		} catch (IOException e) {
+			showAllertMessage(e.getMessage());
+		}
 	}
 
-	private void fillStudentFields(Student user) {
-		this.nameField.setText(user.getName());
-		this.addressField.setText(user.getAddress());
-		this.pncField.setText(user.getPNC());
-		this.icnField.setText(user.getICN());
-		this.idField.setText("" + user.getIdStudent());
-		this.groupField.setText(user.getGroup());
+	private Student updateCurrentUserInfo() {
+		Student studentToBeUpdated = new StudentBuilder().setGroup(groupField.getText()).build();
+		studentToBeUpdated.setIdStudent(((Student) currentStudent).getIdStudent());
+		studentToBeUpdated._setIdUser(((Student) currentStudent)._getIdUser());
+		studentToBeUpdated.setUserName(((Student) currentStudent).getUserName());
+		studentToBeUpdated.setPassword(((Student) currentStudent).getPassword());
+		studentToBeUpdated.setIdUser(currentStudent.getIdUser());
+		studentToBeUpdated.setName(nameField.getText());
+		studentToBeUpdated.setAddress(addressField.getText());
+		studentToBeUpdated.setPNC(pncField.getText());
+		studentToBeUpdated.setICN(icnField.getText());
+		return studentToBeUpdated;
 	}
 
 	private void table() throws ExecutionException {
 
+		tabelView.getColumns().clear();
 		tabelView.getColumns().addAll(coursColumn, teacherColumn, examColumn, gradeColumn);
-		ObservableList<Row> obs = FXCollections.observableArrayList();
-		List<Row> rows = null;
+		ObservableList<CoursEnrollement> obs = FXCollections.observableArrayList();
+		List<CoursEnrollement> rows = null;
 		try {
-			rows = loginService.getStudentEnrollements(currentStudent.getIdUser());
-
+			rows = loginService.getStudentEnrollements(((Student) currentStudent).getIdStudent());
 		} catch (ExecutionException e) {
-			// TODO Auto-genrated catch block
-			e.printStackTrace();
+			showAllertMessage(e.getMessage());
 		}
-		for (Row row : rows) {
+		for (CoursEnrollement row : rows) {
 			obs.add(row);
-			System.out.println(row);
 		}
 
 		coursColumn.setCellValueFactory(new PropertyValueFactory<ArrayList<String>, String>("cours"));
-		teacherColumn.setCellValueFactory(new PropertyValueFactory<ArrayList<String>, String>("teacher"));
-		examColumn.setCellValueFactory(new PropertyValueFactory<ArrayList<String>, String>("examDate"));
-		gradeColumn.setCellValueFactory(new PropertyValueFactory<ArrayList<String>, String>("grade"));
+		teacherColumn.setCellValueFactory(new PropertyValueFactory<ArrayList<String>, String>("examDate"));
+		examColumn.setCellValueFactory(new PropertyValueFactory<ArrayList<String>, String>("grade"));
+		gradeColumn.setCellValueFactory(new PropertyValueFactory<ArrayList<String>, String>("teacher"));
 
 		tabelView.setItems(obs);
 	}
@@ -216,6 +278,41 @@ public class Controller {
 			data.add(cours.getCoursName());
 		}
 		comboBox.setItems(data);
+	}
+
+	private void fillStudentFields(Student user) {
+		this.nameField.setText(user.getName());
+		this.addressField.setText(user.getAddress());
+		this.pncField.setText(user.getPNC());
+		this.icnField.setText(user.getICN());
+		this.idField.setText("" + user.getIdStudent());
+		this.groupField.setText(user.getGroup());
+	}
+
+	private void registerPage() throws IOException {
+		Stage registertStage = new Stage();
+		registertStage.setTitle("Register:");
+		Pane pane = FXMLLoader.load(getClass().getResource("register.fxml"));
+		registertStage.setScene(new Scene(pane, 540, 480));
+		registertStage.show();
+
+	}
+
+	private void studentPage() throws IOException {
+		Stage studentStage = new Stage();
+		studentStage.setTitle("Student:");
+		Pane pane = FXMLLoader.load(getClass().getResource("student.fxml"));
+		studentStage.setScene(new Scene(pane, 1011, 540));
+		studentStage.show();
+
+	}
+
+	private void showAllertMessage(String message) {
+		alert.close();
+		alert.setTitle("Information Dialog");
+		alert.setHeaderText(null);
+		alert.setContentText(message);
+		alert.showAndWait();
 	}
 
 }

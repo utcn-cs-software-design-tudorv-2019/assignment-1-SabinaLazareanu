@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="assigment1.tucn.BLL.StudentRepository"/>
-<fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.StudentRepositoryMySqlImpl"/>
 <fullyQualifiedTypeName name="assigment1.tucn.database.cs.config.DBConnectionFactory"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.StudentRepository"/>
@@ -17,7 +15,6 @@
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.TeacherBuilder"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.Repository"/>
-<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.UserBuilder"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.database.config.JDBConnectionException"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.database.config.JDBConnectionFactory"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.UI.LoginPage"/>
@@ -60,4 +57,7 @@
 <fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.model.Teacher"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.model.Cours"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.UserBuilder"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.model.Student"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.model.User"/>
 </qualifiedTypeNameHistroy>

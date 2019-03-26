@@ -11,5 +11,7 @@ public interface IRepository {
 	Object getById(Long id,ETables table) throws ExecutionException;
 
 	void delete(Long id, ETables table) throws ExecutionException;
+	
+	Object getObjectWithMaxID(ETables table) throws ExecutionException;
 
 }

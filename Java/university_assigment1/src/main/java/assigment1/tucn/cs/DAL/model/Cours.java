@@ -84,5 +84,10 @@ public class Cours {
 		return true;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Cours [idCours=" + idCours + ", coursName=" + coursName + ", examDate=" + examDate + ", teacherId="
+				+ teacherId + "]";
+	}
+
 }

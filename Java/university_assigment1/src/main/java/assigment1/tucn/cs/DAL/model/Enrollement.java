@@ -22,8 +22,9 @@ public class Enrollement {
 	public void setGrade(float grade) {
 		this.grade = grade;
 	}
-	
-	
-	
+	@Override
+	public String toString() {
+		return "Enrollement [Student_id=" + Student_id + ", Cours_id=" + Cours_id + ", grade=" + grade + "]";
+	}
 
 }

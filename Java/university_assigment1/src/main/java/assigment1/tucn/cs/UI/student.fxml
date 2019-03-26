@@ -28,7 +28,7 @@
                         <Label layoutX="68.0" layoutY="380.0" text="Group:" />
                         <Button layoutX="187.0" layoutY="439.0" mnemonicParsing="false" onAction="#updateStudentButtonClicked" text="Update" />
                         <TableView fx:id="tabelView" layoutX="416.0" layoutY="35.0" prefHeight="264.0" prefWidth="575.0" />
-                        <Button layoutX="704.0" layoutY="360.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="210.0" text="Enrolle Course" />
+                        <Button layoutX="704.0" layoutY="360.0" mnemonicParsing="false" onAction="#enroleButton" prefHeight="31.0" prefWidth="210.0" text="Enrolle Course" />
                         <Label layoutX="70.0" layoutY="35.0" text="Acount Information:">
                            <font>
                               <Font size="24.0" />
@@ -37,7 +37,7 @@
                         <ComboBox fx:id="comboBox" layoutX="467.0" layoutY="360.0" prefWidth="150.0" promptText="Courses" />
                      </children>
                   </AnchorPane>
-                  <Button layoutX="88.0" layoutY="437.0" mnemonicParsing="false" onAction="#refresh" text="Refresh" />
+                  <Button fx:id="refreshButton" layoutX="88.0" layoutY="437.0" mnemonicParsing="false" onAction="#refresh" text="Refresh" />
                </children>
             </AnchorPane>
         </content>

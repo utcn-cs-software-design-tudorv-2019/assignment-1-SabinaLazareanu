@@ -5,7 +5,6 @@ import static assigment1.tucn.cs.BLL.utils.SqlQueries.UPDATE_STUDENT;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 import assigment1.tucn.cs.DAL.ExecutionException;
 import assigment1.tucn.cs.DAL.model.Student;
@@ -17,23 +16,17 @@ public class StudentRepository extends Repository {
 		super(dbConnectionWrapper);
 	}
 
-	public Student insertStudent(Student student) throws ExecutionException {
+	public void insertStudent(Student student) throws ExecutionException {
 		Connection connection = getConnectionWrapper().getConnection();
-		Student inseredStudent = null;
 		try (PreparedStatement statement = connection.prepareStatement(INSERT_STUDENT);) {
 			statement.setLong(1, student._getIdUser());
 			statement.setString(2, student.getUserName());
 			statement.setString(3, student.getPassword());
 			statement.setString(4, student.getGroup());
-			try (ResultSet resultSet = statement.executeQuery();) {
-				if (resultSet.next()) {
-					student = getStudentFromResultSet(resultSet);
-				}
-			}
+			statement.execute();
 		} catch (Exception e) {
 			throw new ExecutionException(e.getMessage());
 		}
-		return inseredStudent;
 
 	}
 
@@ -45,7 +38,7 @@ public class StudentRepository extends Repository {
 			statement.setLong(2, student.getIdStudent());
 			statement.execute();
 		} catch (Exception e) {
-			//throw new ExecutionException(e.getMessage());
+			// throw new ExecutionException(e.getMessage());
 			e.printStackTrace();
 		}
 	}

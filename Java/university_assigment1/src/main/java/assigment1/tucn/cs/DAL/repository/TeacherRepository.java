@@ -2,7 +2,6 @@ package assigment1.tucn.cs.DAL.repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 import assigment1.tucn.cs.BLL.utils.SqlQueries;
 import assigment1.tucn.cs.DAL.ExecutionException;
@@ -15,21 +14,15 @@ public class TeacherRepository extends Repository {
 		super(dbConnectionWrapper);
 	}
 
-	public Teacher insertStudent(Teacher teacher) throws ExecutionException {
+	public void insertStudent(Teacher teacher) throws ExecutionException {
 		Connection connection = getConnectionWrapper().getConnection();
-		Teacher inseredTeacher = null;
 		try (PreparedStatement statement = connection.prepareStatement(SqlQueries.INSERT_TEACHER);) {
 			statement.setLong(1, teacher._getIdUser());
 			statement.setString(2, teacher.getUserName());
 			statement.setString(3, teacher.getPassword());
-			try (ResultSet resultSet = statement.executeQuery();) {
-				if (resultSet.next()) {
-					teacher = getTeacherFromResultSet(resultSet);
-				}
-			}
+			statement.execute();
 		} catch (Exception e) {
 			throw new ExecutionException(e.getMessage());
 		}
-		return inseredTeacher;
 	}
 }

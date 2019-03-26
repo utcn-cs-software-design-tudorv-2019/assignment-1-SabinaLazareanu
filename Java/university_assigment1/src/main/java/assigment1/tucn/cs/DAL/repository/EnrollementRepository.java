@@ -1,5 +1,6 @@
 package assigment1.tucn.cs.DAL.repository;
 
+import static assigment1.tucn.cs.BLL.utils.SqlQueries.INSERT_ENROLLEMENT;
 import static assigment1.tucn.cs.BLL.utils.SqlQueries.SELECT_BY_ID_STUDENT_ENROLLEMENT;
 
 import java.sql.Connection;
@@ -35,6 +36,19 @@ public class EnrollementRepository extends Repository {
 		}
 
 		return enrollements;
+	}
+
+	public void insertEnrollement(Enrollement enrollement) throws ExecutionException {
+		Connection connection = getConnectionWrapper().getConnection();
+		try (PreparedStatement statement = connection.prepareStatement(INSERT_ENROLLEMENT);) {
+			statement.setLong(1, enrollement.getStudent_id());
+			statement.setLong(2, enrollement.getCours_id());
+			statement.setFloat(3, enrollement.getGrade());
+			statement.execute();
+		} catch (Exception e) {
+			throw new ExecutionException(e.getMessage());
+		}
+
 	}
 
 }

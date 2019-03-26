@@ -3,6 +3,7 @@ package assigment1.tucn.cs.DAL.repository;
 import static assigment1.tucn.cs.BLL.utils.SqlQueries.DELETE_BY_ID_QUERY;
 import static assigment1.tucn.cs.BLL.utils.SqlQueries.SELECT_ALL_QUERY;
 import static assigment1.tucn.cs.BLL.utils.SqlQueries.SELECT_BY_ID_QUERY;
+import static assigment1.tucn.cs.BLL.utils.SqlQueries.SELECT_OBJECT_WITH_MAX_ID;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -120,6 +121,39 @@ public abstract class Repository implements IRepository {
 			throw new ExecutionException(e.getMessage());
 		}
 
+		return object;
+	}
+
+	@Override
+	public Object getObjectWithMaxID(ETables table) throws ExecutionException {
+		Connection connection = connectionWrapper.getConnection();
+		Object object = null;
+
+		try (PreparedStatement statement = connection
+				.prepareStatement(SELECT_OBJECT_WITH_MAX_ID.replace(PATTERN, table.getValue()));) {
+			try (ResultSet resultSet = statement.executeQuery();) {
+				if (resultSet.next()) {
+					switch (table) {
+					case STUDENT:
+						object = getStudentFromResultSet(resultSet);
+						break;
+					case TEACHER:
+						object = getTeacherFromResultSet(resultSet);
+						break;
+					case USER:
+						object = getUserFromResultSet(resultSet);
+						break;
+					case COURS:
+						object = getCoursFromResultSet(resultSet);
+						break;
+					default:
+						break;
+					}
+				}
+			}
+		} catch (SQLException e) {
+			throw new ExecutionException(e.getMessage());
+		}
 		return object;
 	}
 

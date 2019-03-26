@@ -1,12 +1,12 @@
 package assigment1.tucn.cs.UI;
 
-public class Row {
+public class CoursEnrollement {
 	private String cours;
 	private String teacher;
 	private String examDate;
 	private String grade;
 
-	public Row(String cours, String teacher, String examDate, String grade) {
+	public CoursEnrollement(String cours, String teacher, String examDate, String grade) {
 		super();
 		this.cours = cours;
 		this.teacher = teacher;
