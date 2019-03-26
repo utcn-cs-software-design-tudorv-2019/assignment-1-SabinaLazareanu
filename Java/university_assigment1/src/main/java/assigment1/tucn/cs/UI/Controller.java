@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.mysql.jdbc.StringUtils;
+
 import assigment1.tucn.cs.BLL.StudentService;
 import assigment1.tucn.cs.BLL.Validator;
 import assigment1.tucn.cs.DAL.ExecutionException;
@@ -53,6 +55,12 @@ public class Controller {
 	private CoursRepository coursRepo = new CoursRepository(dbConnectionWrapper);
 	private StudentService loginService = new StudentService(studentRepo, userRepo, teacherRepo, enrolementRepo,
 			coursRepo);
+	Alert alert = new Alert(AlertType.INFORMATION);
+	private TableColumn coursColumn = new TableColumn("Cours");
+	private TableColumn gradeColumn = new TableColumn("Teacher");
+	private TableColumn teacherColumn = new TableColumn("Exam Date");
+	private TableColumn examColumn = new TableColumn("Grade");
+
 	@FXML
 	private Button loginButton;
 
@@ -64,6 +72,9 @@ public class Controller {
 
 	@FXML
 	private Button refreshButton;
+
+	@FXML
+	private Button deleteButton;
 
 	@FXML
 	private Label messageField;
@@ -125,14 +136,6 @@ public class Controller {
 	@FXML
 	private TextField cPasswordRegister;
 
-	Alert alert = new Alert(AlertType.INFORMATION);
-
-	// TODO fix this instantiation
-	private TableColumn coursColumn = new TableColumn("Cours");
-	private TableColumn gradeColumn = new TableColumn("Teacher");
-	private TableColumn teacherColumn = new TableColumn("Exam Date");
-	private TableColumn examColumn = new TableColumn("Grade");
-
 	@FXML
 	void enroleButton(ActionEvent event) throws ExecutionException {
 		String selectedCours = comboBox.getValue();
@@ -143,34 +146,46 @@ public class Controller {
 		enrollement.setGrade(INITIAL_GRADE);
 		loginService.addEnrollement(enrollement);
 		refreshButton.fire();
-		showAllertMessage("Enrollement with success!");
+		showInfoMessage("Enrollement with success!");
 	}
 
 	@FXML
 	void register(ActionEvent event) {
-		Student newUser = new Student();
-		newUser.setName(nameRegister.getText());
-		newUser.setAddress(addressRegister.getText());
-		newUser.setPNC(pncRegister.getText());
-		newUser.setICN(icnRegister.getText());
-		newUser.setGroup(groupRegister.getText());
-		newUser.setUserName(userNameRegister.getText());
-		newUser.setPassword(passwordRegister.getText());
-
-		Validator validator = new Validator();
-		if (validator.validatePassword(passwordRegister.getText(), cPasswordRegister.getText())) {
-			try {
-				currentStudent = loginService.addUser(newUser);
-				Stage stage = (Stage) registerButtonRegister.getScene().getWindow();
-				stage.close();
-				studentPage();
-			} catch (ExecutionException e) {
-				showAllertMessage(e.getMessage());
-			} catch (IOException e) {
-				showAllertMessage(e.getMessage());
+		Student newUser = null;
+		if (!(StringUtils.isEmptyOrWhitespaceOnly(nameRegister.getText())
+				|| StringUtils.isEmptyOrWhitespaceOnly(addressRegister.getText())
+				|| StringUtils.isEmptyOrWhitespaceOnly(pncRegister.getText())
+				|| StringUtils.isEmptyOrWhitespaceOnly(icnRegister.getText())
+				|| StringUtils.isEmptyOrWhitespaceOnly((groupRegister.getText()))
+				|| StringUtils.isEmptyOrWhitespaceOnly(userNameRegister.getText())
+				|| StringUtils.isEmptyOrWhitespaceOnly(passwordRegister.getText())
+				|| StringUtils.isEmptyOrWhitespaceOnly(cPasswordRegister.getText()))) {
+			newUser = new Student();
+			newUser.setName(nameRegister.getText());
+			newUser.setAddress(addressRegister.getText());
+			newUser.setPNC(pncRegister.getText());
+			newUser.setICN(icnRegister.getText());
+			newUser.setGroup(groupRegister.getText());
+			newUser.setUserName(userNameRegister.getText());
+			newUser.setPassword(passwordRegister.getText());
+			Validator validator = new Validator();
+			
+			if (validator.validatePassword(passwordRegister.getText(), cPasswordRegister.getText())) {
+				try {
+					currentStudent = loginService.addUser(newUser);
+					Stage stage = (Stage) registerButtonRegister.getScene().getWindow();
+					stage.close();
+					studentPage();
+				} catch (ExecutionException e) {
+					showInfoMessage(e.getMessage());
+				} catch (IOException e) {
+					showInfoMessage(e.getMessage());
+				}
+			} else {
+				registerMessage.setText("Confirmed password is incorrect!");
 			}
 		} else {
-			registerMessage.setText("Confirmed password is incorrect!");
+			showInfoMessage("Pease fill all the fields!");
 		}
 
 	}
@@ -184,7 +199,7 @@ public class Controller {
 			table();
 			comboBox();
 		} catch (ExecutionException e) {
-			showAllertMessage(e.getMessage());
+			showInfoMessage(e.getMessage());
 		}
 
 	}
@@ -195,9 +210,9 @@ public class Controller {
 			Student studentToBeUpdated = updateCurrentUserInfo();
 			loginService.updateStudent(studentToBeUpdated);
 			refreshButton.fire();
-			showAllertMessage("Update done with succes!");
+			showInfoMessage("Update with succes!");
 		} catch (ExecutionException e) {
-			showAllertMessage(e.getMessage());
+			showInfoMessage(e.getMessage());
 		}
 	}
 
@@ -217,9 +232,20 @@ public class Controller {
 				messageField.setText("Username or password invalid!!");
 			}
 		} catch (ExecutionException | IOException e) {
-			showAllertMessage(e.getMessage());
+			showInfoMessage(e.getMessage());
 		}
 
+	}
+
+	@FXML
+	void deleteAcount(ActionEvent event) {
+		try {
+			loginService.deleteAcount(currentStudent);
+			Stage stage = (Stage) deleteButton.getScene().getWindow();
+			stage.close();
+		} catch (ExecutionException e) {
+			showInfoMessage(e.getMessage());
+		}
 	}
 
 	@FXML
@@ -229,7 +255,7 @@ public class Controller {
 			stage.close();
 			registerPage();
 		} catch (IOException e) {
-			showAllertMessage(e.getMessage());
+			showInfoMessage(e.getMessage());
 		}
 	}
 
@@ -256,7 +282,7 @@ public class Controller {
 		try {
 			rows = loginService.getStudentEnrollements(((Student) currentStudent).getIdStudent());
 		} catch (ExecutionException e) {
-			showAllertMessage(e.getMessage());
+			showInfoMessage(e.getMessage());
 		}
 		for (CoursEnrollement row : rows) {
 			obs.add(row);
@@ -307,7 +333,7 @@ public class Controller {
 
 	}
 
-	private void showAllertMessage(String message) {
+	private void showInfoMessage(String message) {
 		alert.close();
 		alert.setTitle("Information Dialog");
 		alert.setHeaderText(null);

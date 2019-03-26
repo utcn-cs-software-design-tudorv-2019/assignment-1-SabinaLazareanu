@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.StudentRepositoryMySqlImpl"/>
-<fullyQualifiedTypeName name="assigment1.tucn.database.cs.config.DBConnectionFactory"/>
-<fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.StudentRepository"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.AbstractRepository"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
@@ -34,17 +31,14 @@
 <fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.Enrollement"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.Cours"/>
-<fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.utils.SqlQueries"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.EnrollementBuilder"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.CoursBuilder"/>
-<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.model.Enrollement"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.repository.Repository"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.repository.TeacherRepository"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.repository.EnrollementRepository"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.repository.CoursRepository"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.utils.ETables"/>
 <fullyQualifiedTypeName name="javafx.scene.control.TableView"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="javafx.collections.ObservableList"/>
@@ -55,9 +49,15 @@
 <fullyQualifiedTypeName name="javafx.scene.control.TableColumn"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.UI.Row"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.model.Teacher"/>
-<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.model.Cours"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.UserBuilder"/>
-<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.model.Student"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.model.User"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.utils.ETables"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.Validate"/>
+<fullyQualifiedTypeName name="com.oracle.xmlns.internal.webservices.jaxws_databinding.ExistingAnnotationsType"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.BLL.utils.SqlQueries"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.model.Cours"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.model.Enrollement"/>
+<fullyQualifiedTypeName name="assigment1.tucn.cs.DAL.model.Student"/>
 </qualifiedTypeNameHistroy>

@@ -38,6 +38,7 @@
                      </children>
                   </AnchorPane>
                   <Button fx:id="refreshButton" layoutX="88.0" layoutY="437.0" mnemonicParsing="false" onAction="#refresh" text="Refresh" />
+                  <Button fx:id="deleteButton" layoutX="853.0" layoutY="453.0" mnemonicParsing="false" onAction="#deleteAcount" text="Delete Acount" />
                </children>
             </AnchorPane>
         </content>

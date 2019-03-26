@@ -8,6 +8,7 @@ import static assigment1.tucn.cs.BLL.utils.ETables.USER;
 import java.util.ArrayList;
 import java.util.List;
 
+import assigment1.tucn.cs.BLL.utils.ETables;
 import assigment1.tucn.cs.DAL.ExecutionException;
 import assigment1.tucn.cs.DAL.model.Cours;
 import assigment1.tucn.cs.DAL.model.Enrollement;
@@ -177,6 +178,12 @@ public class StudentService {
 
 	public void addEnrollement(Enrollement enrollement) throws ExecutionException {
 		enrolementRepo.insertEnrollement(enrollement);
+	}
+
+	public void deleteAcount(User currentUser) throws ExecutionException {
+		enrolementRepo.delete(((Student) currentUser).getIdStudent());
+		studentRepo.delete(((Student) currentUser).getIdStudent(), STUDENT);
+		userRepo.delete(currentUser.getIdUser(), USER);
 	}
 
 }

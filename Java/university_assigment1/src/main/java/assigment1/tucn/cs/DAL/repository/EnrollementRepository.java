@@ -1,5 +1,6 @@
 package assigment1.tucn.cs.DAL.repository;
 
+import static assigment1.tucn.cs.BLL.utils.SqlQueries.DELETE_ENROLLEMENT_BY_STUDENT_ID_QUERY;
 import static assigment1.tucn.cs.BLL.utils.SqlQueries.INSERT_ENROLLEMENT;
 import static assigment1.tucn.cs.BLL.utils.SqlQueries.SELECT_BY_ID_STUDENT_ENROLLEMENT;
 
@@ -44,6 +45,18 @@ public class EnrollementRepository extends Repository {
 			statement.setLong(1, enrollement.getStudent_id());
 			statement.setLong(2, enrollement.getCours_id());
 			statement.setFloat(3, enrollement.getGrade());
+			statement.execute();
+		} catch (Exception e) {
+			throw new ExecutionException(e.getMessage());
+		}
+
+	}
+
+	public void delete(Long id) throws ExecutionException {
+		Connection connection = getConnectionWrapper().getConnection();
+
+		try (PreparedStatement statement = connection.prepareStatement(DELETE_ENROLLEMENT_BY_STUDENT_ID_QUERY)) {
+			statement.setLong(1, id);
 			statement.execute();
 		} catch (Exception e) {
 			throw new ExecutionException(e.getMessage());
