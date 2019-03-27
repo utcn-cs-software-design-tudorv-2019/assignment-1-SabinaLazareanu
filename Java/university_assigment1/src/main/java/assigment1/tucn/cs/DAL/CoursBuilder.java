@@ -2,7 +2,7 @@ package assigment1.tucn.cs.DAL;
 
 import java.sql.Date;
 
-import assigment1.tucn.cs.DAL.model.Cours;
+import assigment1.tucn.cs.DAL.entities.Cours;
 
 public class CoursBuilder {
 

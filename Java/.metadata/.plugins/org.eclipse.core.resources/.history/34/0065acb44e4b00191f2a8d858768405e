@@ -1,5 +1,0 @@
-url=jdbc:mysql://localhost:3306/scmsdb?useSSL=true
-username=root
-password=
-driver=com.mysql.jdbc.Driver
-timeout=5

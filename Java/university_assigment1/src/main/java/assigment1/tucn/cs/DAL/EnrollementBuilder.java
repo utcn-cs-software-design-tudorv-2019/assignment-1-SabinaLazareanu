@@ -1,13 +1,13 @@
 package assigment1.tucn.cs.DAL;
 
-import assigment1.tucn.cs.DAL.model.Enrollement;
+import assigment1.tucn.cs.DAL.entities.Enrollment;
 
 public class EnrollementBuilder {
 
-	private Enrollement enrollement;
+	private Enrollment enrollement;
 
 	public EnrollementBuilder() {
-		enrollement = new Enrollement();
+		enrollement = new Enrollment();
 	}
 
 	public EnrollementBuilder setIdStudent(Long id) {
@@ -25,7 +25,7 @@ public class EnrollementBuilder {
 		return this;
 	}
 
-	public Enrollement build() {
+	public Enrollment build() {
 		return enrollement;
 	}
 

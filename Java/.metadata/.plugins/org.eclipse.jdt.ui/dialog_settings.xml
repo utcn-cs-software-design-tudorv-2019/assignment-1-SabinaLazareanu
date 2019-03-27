@@ -86,6 +86,7 @@
 	<section name="OptionalMessageDialog.hide.">
 		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
 		<item value="false" key="EmptyDefaultAssistCategory"/>
+		<item value="false" key="BinaryPrimitiveConstantWarningDialog"/>
 	</section>
 	<section name="DialogBounds_GenerateHashCodeEqualsDialog">
 		<item value="678" key="DIALOG_WIDTH"/>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assigment1.tucn.cs.UI.Controller">
+   <children>
+      <AnchorPane layoutX="155.0" layoutY="192.0" prefHeight="613.0" prefWidth="1104.0">
+         <children>
+            <TitledPane animated="false" layoutX="-155.0" layoutY="-192.0" prefHeight="805.0" prefWidth="1253.0" text="Admin">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="641.0" prefWidth="999.0">
+                     <children>
+                        <TableView fx:id="studentsTable" layoutX="55.0" layoutY="46.0" prefHeight="337.0" prefWidth="470.0">
+                           <columns>
+                              <TableColumn fx:id="studentGroupColumn" prefWidth="75.0" text="Grade" />
+                           </columns></TableView>
+                        <TableView fx:id="enrollementsTable" layoutX="661.0" layoutY="46.0" prefHeight="334.0" prefWidth="542.0">
+                          <columns>
+                            <TableColumn prefWidth="126.0" text="Cours" />
+                            <TableColumn prefWidth="124.0" text="Teacher" />
+                              <TableColumn prefWidth="154.0" text="Exam Date" />
+                              <TableColumn fx:id="gradeColumn" prefWidth="137.0" text="Grade" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="unrollButtonTeacher" layoutX="943.0" layoutY="410.0" mnemonicParsing="false" onAction="#unenrollStudent" prefHeight="31.0" prefWidth="138.0" text="Unenroll" />
+                        <Button fx:id="enrollButtonAdmin" layoutX="107.0" layoutY="410.0" mnemonicParsing="false" text="Enroll" />
+                        <TextArea layoutX="277.0" layoutY="483.0" prefHeight="241.0" prefWidth="624.0" />
+                        <Button layoutX="959.0" layoutY="604.0" mnemonicParsing="false" text="Make a rapport" />
+                        <Button layoutX="220.0" layoutY="410.0" mnemonicParsing="false" onAction="#refreshTeacherPage" text="Refresh" />
+                        <Button layoutX="548.0" layoutY="410.0" mnemonicParsing="false" onAction="#updateStudentInfoByTeacher" text="Update Info" />
+                        <Button layoutX="546.0" layoutY="215.0" mnemonicParsing="false" onAction="#getStudentEnrollements" text="Student Info" />
+                        <Button layoutX="538.0" layoutY="152.0" mnemonicParsing="false" onAction="#deleteStudentByTeacher" text="Delete Student" />
+                        <TextField fx:id="newGroupField" layoutX="338.0" layoutY="410.0" />
+                        <TextField fx:id="newGradeField" layoutX="681.0" layoutY="410.0" />
+                        <Label layoutX="397.0" layoutY="387.0" text="New Group" />
+                        <Label layoutX="748.0" layoutY="387.0" text="New Grade" />
+                        <Button layoutX="554.0" layoutY="281.0" mnemonicParsing="false" onAction="#getGrade" text="Get grade" />
+                        <Button layoutX="553.0" layoutY="84.0" mnemonicParsing="false" onAction="#getGroup" text="Get group" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

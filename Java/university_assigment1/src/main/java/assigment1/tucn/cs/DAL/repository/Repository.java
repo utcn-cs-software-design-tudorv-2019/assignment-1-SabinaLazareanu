@@ -19,11 +19,11 @@ import assigment1.tucn.cs.DAL.ExecutionException;
 import assigment1.tucn.cs.DAL.StudentBuilder;
 import assigment1.tucn.cs.DAL.TeacherBuilder;
 import assigment1.tucn.cs.DAL.UserBuilder;
-import assigment1.tucn.cs.DAL.model.Cours;
-import assigment1.tucn.cs.DAL.model.Enrollement;
-import assigment1.tucn.cs.DAL.model.Student;
-import assigment1.tucn.cs.DAL.model.Teacher;
-import assigment1.tucn.cs.DAL.model.User;
+import assigment1.tucn.cs.DAL.entities.Cours;
+import assigment1.tucn.cs.DAL.entities.Enrollment;
+import assigment1.tucn.cs.DAL.entities.Student;
+import assigment1.tucn.cs.DAL.entities.Teacher;
+import assigment1.tucn.cs.DAL.entities.User;
 import assigment1.tucn.cs.database.config.JDBConnectionConfig;
 
 public abstract class Repository implements IRepository {
@@ -173,7 +173,7 @@ public abstract class Repository implements IRepository {
 				.setAddress(rs.getString("address")).setINC(rs.getString("ICN")).build();
 	}
 
-	public Enrollement getEnrolleFromResultSet(ResultSet rs) throws SQLException {
+	public Enrollment getEnrolleFromResultSet(ResultSet rs) throws SQLException {
 		return new EnrollementBuilder().setIdStudent(rs.getLong("Student_id")).setIdCours(rs.getLong("cours_id"))
 				.setGrade(rs.getFloat("grade")).build();
 	}

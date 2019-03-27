@@ -1,9 +1,0 @@
-package assigment1.tucn.cs.BLL;
-
-import java.util.List;
-
-public interface AbstractRepository {
-	List<?> findAll();
-
-	Object get
-}

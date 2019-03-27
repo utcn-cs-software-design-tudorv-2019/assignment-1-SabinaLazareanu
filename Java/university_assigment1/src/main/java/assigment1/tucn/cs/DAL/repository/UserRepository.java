@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import assigment1.tucn.cs.DAL.ExecutionException;
-import assigment1.tucn.cs.DAL.model.User;
+import assigment1.tucn.cs.DAL.entities.User;
 import assigment1.tucn.cs.database.config.JDBConnectionConfig;
 
 public class UserRepository extends Repository {

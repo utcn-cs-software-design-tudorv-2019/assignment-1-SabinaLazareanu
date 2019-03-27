@@ -1,6 +1,6 @@
 package assigment1.tucn.cs.DAL;
 
-import assigment1.tucn.cs.DAL.model.Student;
+import assigment1.tucn.cs.DAL.entities.Student;
 
 public class StudentBuilder {
 

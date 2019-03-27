@@ -1,13 +1,13 @@
 package assigment1.tucn.cs.DAL.repository;
 
 import static assigment1.tucn.cs.BLL.utils.SqlQueries.INSERT_STUDENT;
-import static assigment1.tucn.cs.BLL.utils.SqlQueries.UPDATE_STUDENT;
+import static assigment1.tucn.cs.BLL.utils.SqlQueries.UPDATE_STUDENT_GROUP;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import assigment1.tucn.cs.DAL.ExecutionException;
-import assigment1.tucn.cs.DAL.model.Student;
+import assigment1.tucn.cs.DAL.entities.Student;
 import assigment1.tucn.cs.database.config.JDBConnectionConfig;
 
 public class StudentRepository extends Repository {
@@ -33,7 +33,7 @@ public class StudentRepository extends Repository {
 	public void update(Student student) throws ExecutionException {
 
 		Connection connection = getConnectionWrapper().getConnection();
-		try (PreparedStatement statement = connection.prepareStatement(UPDATE_STUDENT);) {
+		try (PreparedStatement statement = connection.prepareStatement(UPDATE_STUDENT_GROUP);) {
 			statement.setString(1, student.getGroup());
 			statement.setLong(2, student.getIdStudent());
 			statement.execute();

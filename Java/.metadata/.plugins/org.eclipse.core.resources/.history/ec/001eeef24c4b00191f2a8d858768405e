@@ -1,7 +1,0 @@
-package assigment1.tucn.cs.database.config;
-
-public class DBConnectionFactory {
-	public JDBConnectionWrapper getConnectionWrapper(String schema) throws DBConnectionException {
-		return new JDBConnectionWrapper(schema);
-	}
-}

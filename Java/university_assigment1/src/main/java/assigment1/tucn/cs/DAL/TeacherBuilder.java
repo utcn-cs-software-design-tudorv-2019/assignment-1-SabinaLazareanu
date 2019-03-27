@@ -1,6 +1,6 @@
 package assigment1.tucn.cs.DAL;
 
-import assigment1.tucn.cs.DAL.model.Teacher;
+import assigment1.tucn.cs.DAL.entities.Teacher;
 
 public class TeacherBuilder {
 

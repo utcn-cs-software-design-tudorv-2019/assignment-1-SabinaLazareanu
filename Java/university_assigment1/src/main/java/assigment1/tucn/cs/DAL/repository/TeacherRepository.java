@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 
 import assigment1.tucn.cs.BLL.utils.SqlQueries;
 import assigment1.tucn.cs.DAL.ExecutionException;
-import assigment1.tucn.cs.DAL.model.Teacher;
+import assigment1.tucn.cs.DAL.entities.Teacher;
 import assigment1.tucn.cs.database.config.JDBConnectionConfig;
 
 public class TeacherRepository extends Repository {
